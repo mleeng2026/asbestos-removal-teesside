@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://asbestos-removal-middlesbrough-teesside.open-rhino-5981.chatgpt.site"),
+  metadataBase: new URL("https://asbestosremovalteesside.co.uk"),
   title: {
     default: "Asbestos Removal Middlesbrough & Teesside | Free Quote",
     template: "%s | Asbestos Removal Teesside",
