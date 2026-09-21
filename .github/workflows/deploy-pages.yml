@@ -1,5 +1,7 @@
 name: Deploy website to GitHub Pages
 
+# Repository is public; Pages can be enabled automatically.
+
 on:
   push:
     branches: [main]
