@@ -107,11 +107,19 @@ export function DetailPage({ slug }: { slug: string }) {
   const localEditorial = !isService ? areaEditorial[page.slug] : undefined;
   const serviceDepth = isService ? serviceEditorial[page.slug] : undefined;
   const pageFaqs = faqsFor(page);
+  const roofClusterSlugs = [
+    "asbestos-roof-removal-middlesbrough-teesside",
+    "asbestos-warehouse-corrugated-roof-removal-teesside",
+    "asbestos-farm-building-roof-removal-teesside",
+    "asbestos-shed-outbuilding-roof-removal-teesside",
+  ];
   const relatedServices = isService
-    ? services.filter((item) => item.slug !== page.slug).slice(0, 4)
+    ? (roofClusterSlugs.includes(page.slug)
+        ? services.filter((item) => roofClusterSlugs.includes(item.slug) && item.slug !== page.slug)
+        : services.filter((item) => item.slug !== page.slug).slice(0, 4))
     : (page as AreaPage).serviceSlugs.map((serviceSlug) => services.find((item) => item.slug === serviceSlug)).filter((item): item is ServicePage => Boolean(item));
   const relatedAreas = isService
-    ? areas.slice(0, 4)
+    ? areas
     : (page as AreaPage).nearbySlugs.map((areaSlug) => areas.find((item) => item.slug === areaSlug)).filter((item): item is AreaPage => Boolean(item));
 
   return (
@@ -343,10 +351,15 @@ export function DetailPage({ slug }: { slug: string }) {
                 </div>
               </>
             )}
-            <div className="section-heading second-related centered-heading"><p className="eyebrow">{isService ? "Service coverage" : "Nearby coverage"}</p><h2>{isService ? "Asbestos removal across Teesside" : "Other local areas we cover"}</h2></div>
-            <div className="related-grid">
-              {relatedAreas.map((item) => <Link key={item.slug} href={`/${item.slug}`}><b>{item.navTitle}</b>{isService && <span>{item.summary}</span>}<em>View local page →</em></Link>)}
+            <div className="section-heading second-related centered-heading">
+              <p className="eyebrow">{isService ? "Where we cover" : "Nearby coverage"}</p>
+              <h2>{isService ? `${page.navTitle} across Teesside and nearby areas` : "Other local areas we cover"}</h2>
+              {isService && <p className="coverage-intro">We cover this service across Middlesbrough, Stockton-on-Tees, Thornaby, Billingham, Redcar, Yarm, Ingleby Barwick, Guisborough, Eston, Hartlepool, Darlington and nearby parts of County Durham. Choose the nearest area page for useful local detail including districts, streets, roads, landmarks, industrial estates and business parks.</p>}
             </div>
+            <div className={`related-grid ${isService ? "coverage-grid" : ""}`}>
+              {relatedAreas.map((item) => <Link key={item.slug} href={`/${item.slug}`}><b>{isService ? `${page.navTitle} in ${item.navTitle}` : item.navTitle}</b>{isService && <span>{item.summary}</span>}<em>View local page →</em></Link>)}
+            </div>
+            {isService && <p className="hub-return coverage-hub-link"><Link href="/areas">See the full asbestos removal areas we cover →</Link></p>}
           </div>
         </section>
 

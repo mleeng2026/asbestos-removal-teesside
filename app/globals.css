@@ -264,6 +264,10 @@ figure { margin: 0; }
 .related-grid b { color: var(--ink); font: 700 24px/1.2 Georgia,serif; }
 .related-grid span { margin-top: 15px; color: var(--muted); font-size: 14px; line-height: 1.55; }
 .related-grid em { margin-top: auto; color: #8d5a0b; font-size: 13px; font-style: normal; font-weight: 900; }
+.coverage-intro { max-width: 900px; margin: 18px auto 0; color: var(--muted); }
+.coverage-grid { grid-template-columns: repeat(3,1fr); }
+.coverage-grid a { min-height: 220px; }
+.coverage-hub-link { margin-top: 28px; text-align: center; }
 .second-related { margin-top: 62px; }
 .hub-return { grid-column: 1 / -1; margin: 8px 0 0; text-align: center; }
 

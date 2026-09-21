@@ -27,6 +27,18 @@ export const supplementalServiceFaqs: Record<string, { question: string; answer:
     { question: "Should I climb onto the roof to take photographs?", answer: "No. Fragile or damaged roofs should not be accessed for an enquiry. Send safe ground-level photographs from several sides with approximate dimensions and height." },
     { question: "Is a replacement roof included after asbestos sheets are removed?", answer: "Not automatically. Explain whether you need asbestos-sheet removal only, temporary weather protection, structural dismantling or a separately coordinated replacement roof." },
   ],
+  "asbestos-warehouse-corrugated-roof-removal-teesside": [
+    { question: "Should staff or tenants stay below the roof while work is planned?", answer: "Do not assume normal occupancy can continue unchanged. Provide the operating areas, shift pattern and stock or machinery below so separation, phasing and temporary closures can be considered in the method and programme." },
+    { question: "Does the quotation include scaffolding, lifting equipment and weather protection?", answer: "Only where each item is expressly included. The tender should allocate scaffold or access equipment, sheet lowering, temporary protection, roof replacement and any structural or gutter work to named parties." },
+  ],
+  "asbestos-farm-building-roof-removal-teesside": [
+    { question: "Can several farm roofs be assessed together?", answer: "Yes. Create a building schedule with a name or number for each barn, store or outbuilding, then add dimensions, use, access and roof evidence so the complete holding is not treated as one vague area." },
+    { question: "When is the best time to plan agricultural roof removal?", answer: "Choose the programme around livestock, stored crops, machinery, weather exposure and the replacement roofer. Give the operational dates that cannot move so the viable work window can be discussed." },
+  ],
+  "asbestos-shed-outbuilding-roof-removal-teesside": [
+    { question: "Should I remove moss or branches before sending photographs?", answer: "Do not scrape, pressure-wash or disturb a suspected asbestos roof. Send safe photographs of its current condition and mention branches, vegetation or debris that may affect access." },
+    { question: "Is a new shed or replacement roof included?", answer: "Not automatically. The written quotation should say whether it covers asbestos sheets only, frame or building dismantling, waste removal, temporary protection or any replacement structure." },
+  ],
   "asbestos-aib-removal-middlesbrough-teesside": [
     { question: "What photographs are useful for an AIB quotation?", answer: "Show the entire board or affected area, height, nearby services and access. Do not break, unscrew or expose an edge to try to prove what the board is." },
     { question: "Can AIB removal be coordinated with electricians or builders?", answer: "Yes. Send their scope and start date, and define the area and handover they require after asbestos work is complete." },
@@ -207,6 +219,129 @@ export const serviceEditorial: Record<string, ServiceEditorial> = {
     ],
     quoteHeading: "Send the full roof, access and replacement plan.",
     quoteCopy: "Include ground-level photographs, dimensions, height, sheet condition, internal use, access, survey information and whether you need sheets only, the structure or complete demolition removed.",
+  },
+
+  "asbestos-warehouse-corrugated-roof-removal-teesside": {
+    decisionHeading: "Plan the warehouse roof around operations, access and the reroofing handover.",
+    decisionIntro: "The commercial buyer usually needs more than asbestos sheets taken away. They need a controlled package that lets production, storage, redevelopment or a new roofing system move forward without an undefined gap between contractors.",
+    sections: [
+      {
+        eyebrow: "Industrial Teesside",
+        heading: "Warehouse and corrugated asbestos roof removal across working commercial sites",
+        paragraphs: [
+          "Warehouses and workshops around Riverside Park, TeesAMP, Portrack Lane, Preston Farm and Teesdale can have very different operating constraints. One building may be vacant for redevelopment; another may hold stock, vehicles and active production directly below the roof. The enquiry should state which zones can close, which routes remain live and whether neighbouring units share yards, gutters or access. That operating picture is essential before height and sheet quantity can be turned into a workable scope.",
+          "Billingham sites around Cowpen Lane and Haverton Hill, Redcar units near the Trunk Road and Longbeck, and Hartlepool premises around Oakesway or Queens Meadow may add inductions, permit systems and controlled loading areas. These places are useful references because they explain the type of site access the buyer may need to describe; they are not claims that the photograph or a particular removal job came from that estate. Send the actual address and site rules for the building being priced.",
+        ],
+      },
+      {
+        eyebrow: "Roof evidence and extent",
+        heading: "Confirm the sheets, then map rooflights, gutters, adjoining bays and hidden interfaces",
+        paragraphs: [
+          "A corrugated profile does not prove asbestos content. Provide the roof survey, sampling result or other reliable identification, and mark the affected elevations or bays on a plan. If only part of a larger roof has been sampled, do not assume every sheet, ridge or wall cladding panel is identical. Different phases of construction and later repairs can place several products across one building, so the tender information should distinguish what is confirmed from what remains to be checked.",
+          "Measured roof area is only the starting figure. Record ridge and eaves height, roof pitch, rooflights, valleys, gutters, vents, penetrations and any internal lining or insulation. Show where corrugated sheets meet newer metal cladding and whether the roof continues across a party wall or adjoining unit. Safe internal photographs can reveal purlins, stock racks and equipment below, while external images show crane, scaffold or mobile-access positions without anybody climbing onto a fragile roof.",
+        ],
+      },
+      {
+        eyebrow: "Programme and interfaces",
+        heading: "Coordinate asbestos removal with scaffold, lifting, temporary protection and replacement roofing",
+        paragraphs: [
+          "The client, asbestos contractor and replacement roofer should agree the sequence before mobilisation. Identify who supplies edge protection, scaffold, lifting equipment, temporary weatherproofing, replacement sheets, rainwater goods and structural repairs. If the building cannot remain open to rain, the programme may need manageable roof sections rather than one complete strip. The quotation should show those boundaries instead of leaving the buyer to discover them when the old covering has already been removed.",
+          "If solar panels, demolition, dilapidations or a lease handover are driving the work, send that downstream scope and date. Solar installers may need a defined clean roof and structural confirmation; a demolition contractor may require the asbestos package completed before mechanical work begins; a landlord may need several units returned in phases. A useful asbestos warehouse roof removal plan makes the next contractor's starting condition explicit and assigns responsibility for every interface.",
+        ],
+      },
+      {
+        eyebrow: "Commercial quotation control",
+        heading: "Compare warehouse roof tenders on the same access, occupancy and completion assumptions",
+        paragraphs: [
+          "Issue each tenderer with the same marked survey, roof drawings, photographs and programme notes. State normal operating hours, delivery peaks, emergency routes, isolation responsibilities and whether stock or machinery will be cleared. A price based on an empty warehouse is not comparable with one that includes phased work above live operations. Ask each quotation to identify assumptions, exclusions and site-visit requirements so the totals describe the same package.",
+          "For multi-bay buildings, request quantities, duration and handover by bay or phase where that helps the client plan. Nominate who can approve changes if concealed sheets, additional cladding or unsafe structural conditions are found after access is established. Also confirm the documents required at completion and the point at which the replacement roofer can take control. This gives facilities teams, landlords and principal contractors a decision they can programme rather than a bare cost per square metre.",
+        ],
+      },
+    ],
+    quoteHeading: "Send the warehouse roof package, not only a sheet count.",
+    quoteCopy: "Include identification evidence, plans or measurements, heights, rooflights and gutters, internal and external photographs, occupancy, site rules, access provision, phasing and the replacement-roof handover date.",
+  },
+
+  "asbestos-farm-building-roof-removal-teesside": {
+    decisionHeading: "Build the farm roof plan around each structure and the way the holding operates.",
+    decisionIntro: "A barn used for livestock, a machinery store, a farmhouse garage and a redundant shed may sit metres apart but need different access, clearance and reroofing decisions. Number the buildings and define each one before asking for a price.",
+    sections: [
+      {
+        eyebrow: "Agricultural buildings",
+        heading: "Asbestos roof removal for barns, stores, workshops and farmhouse outbuildings",
+        paragraphs: [
+          "Begin with a simple schedule: main barn, livestock shed, machinery store, workshop, farmhouse garage or another clear identifier. Add the approximate length, width and height of every roof, what the building contains and whether sheets connect to lean-tos or later extensions. This prevents one aerial photograph or total square-metre estimate from hiding several roof sections with different frames, pitches, access routes and conditions.",
+          "A farmhouse asbestos roof removal enquiry can be assessed where a survey or sample confirms the material on a specific roof element. The main house may instead have a conventional slate or tile roof while a garage, utility range or linked outbuilding carries corrugated sheets. Do not describe the entire property as an asbestos farmhouse roof unless the evidence supports that wording. Identify the actual roof, the material evidence and whether you need sheets removed, a structure dismantled or a complete redundant building cleared.",
+        ],
+      },
+      {
+        eyebrow: "Rural operating context",
+        heading: "Plan access around livestock, feed, machinery and seasonal farm work",
+        paragraphs: [
+          "Tell us whether animals, stored crops, feed, vehicles or fixed equipment normally sit below or beside the roof. Moving them is not a last-minute housekeeping task; it can decide when the building is available and how the work zone is separated. Note water troughs, electrical services, fuel tanks and doors that must remain usable, and identify the person who controls the holding during the planned removal period.",
+          "Rural access can look generous on a map but narrow quickly at gateways, tracks and turns between buildings. Provide gate widths, track condition, overhead cables, soft ground, yard gradients and a safe position for loading or lifting equipment. Around Stokesley, Great Ayton, Guisborough, Yarm and the rural edges of County Durham, the actual farm route and compound matter more to planning than the nearest town name. Send photographs from the public-road entrance through to the affected building where access is uncertain.",
+        ],
+      },
+      {
+        eyebrow: "Condition and confirmation",
+        heading: "Storm damage, leaks and weathered sheets still require an evidence-led scope",
+        paragraphs: [
+          "Moss, age and a corrugated shape do not confirm asbestos cement. Use a reliable survey, sample or documented product information where available. If several barns were erected or repaired at different times, mark which roofs have been confirmed and which only look similar. That distinction protects the farm from commissioning removal or disposal around an assumption that has not been tested.",
+          "After storm damage or a new leak, do not climb onto the roof, sweep fragments or move broken pieces to improve a photograph. Keep people and animals away from the immediate area and explain what happened, what is exposed and whether water is reaching feed, electrics or occupied space. Safe ground-level photographs and an urgent operational description allow the next step to be assessed without adding disturbance to an already damaged sheet.",
+        ],
+      },
+      {
+        eyebrow: "Removal and reroofing window",
+        heading: "Match the asbestos phase to weather protection and the agricultural calendar",
+        paragraphs: [
+          "Give the dates when a building must house animals, machinery or harvest-related stock, then work backwards with the replacement roofer. A removal slot that ignores those dates can leave a useful building unavailable at the wrong point in the season. Confirm whether temporary weather protection is required and who installs the permanent roof, flashings and rainwater goods once the asbestos sheets have been removed.",
+          "For redundant buildings, say whether the frame, blockwork, timber, contents or concrete base are also included. For structures that stay, identify suspect purlins, corrosion, timber decay or movement that a roofer or structural specialist may need to inspect. The asbestos quotation should not silently promise structural repair or a new covering. It should define a safe removal boundary and a clear handover so the wider farm project can continue with known responsibilities.",
+        ],
+      },
+    ],
+    quoteHeading: "Send a building-by-building farm roof schedule.",
+    quoteCopy: "For each structure, include its use, roof dimensions and height, confirmation evidence, safe photographs, livestock or stored items, gate and track access, connected roofs, desired removal extent and reroofing window.",
+  },
+
+  "asbestos-shed-outbuilding-roof-removal-teesside": {
+    decisionHeading: "Define the small structure, the access route and what must remain when the job is finished.",
+    decisionIntro: "Shed and outbuilding enquiries are often urgent because a garden project, property sale, extension or replacement building is waiting. A useful quote separates the roof sheets from the frame, contents, base and new structure.",
+    sections: [
+      {
+        eyebrow: "Small roofs, complete scopes",
+        heading: "Asbestos shed and outbuilding roof removal before replacement, sale or redevelopment",
+        paragraphs: [
+          "Send a wide photograph of the entire shed, garage or store from every safely accessible side. Add roof length and width, wall construction, visible condition and whether it is freestanding, attached to the house or joined to a neighbour's structure. A four-sheet garden shed can still involve shared gutters, brittle framing or a roof edge over a boundary, so the job should not be reduced to the number of corrugated panels.",
+          "State the end result you need. Roof-sheet removal leaves a different site from frame dismantling, full outbuilding demolition or clearance of a concrete base. If a new shed, extension, landscaped area or garage roof is booked, ask the follow-on contractor what they need handed back. That prevents the buyer expecting contents removal, masonry demolition or new roofing when the asbestos quotation covers only the confirmed sheets.",
+        ],
+      },
+      {
+        eyebrow: "Domestic access",
+        heading: "Narrow passages, rear lanes and occupied homes can control the removal route",
+        paragraphs: [
+          "Measure the narrowest gate or passage between the structure and the collection point. Photograph steps, tight corners, conservatories, parked cars, overhead cables and any route through the house. Rear access around central Middlesbrough or Stockton may be different from a wide drive in Ingleby Barwick, Yarm or the edge of Hartlepool, but the quotation must follow the buyer's actual route rather than assume access from the road.",
+          "Tell us whether children, pets, tenants or neighbours use the garden and whether the path is shared. Trees, ivy and stored materials should be shown as they are; do not cut vegetation against suspected sheets or clear the roof yourself. Agree who empties the building and when. Paint tins, tools, timber and household storage beneath the roof can prevent work starting even when the external access looks clear.",
+        ],
+      },
+      {
+        eyebrow: "Material and damage",
+        heading: "Use survey or sampling evidence instead of identifying a shed roof from appearance",
+        paragraphs: [
+          "Corrugated sheets on garages and sheds are commonly described as asbestos by sellers, neighbours or tradespeople, but a photograph alone should not be treated as proof. If no reliable result exists, explain what project will disturb the roof and ask about the sensible identification route. Where material is confirmed, send the report or sample result with the photographs so condition and access can be assessed separately from identification.",
+          "For cracked sheets, holes or loose fragments, keep away from the damaged area and do not drill, sweep or pressure-wash it. Explain whether damage is recent, whether anything fell inside and whether the outbuilding remains in use. Photographs from a safe position can show the wider roof and surrounding space. There is no need to climb a ladder or stand on a neighbouring roof simply to obtain a closer view for an estimate.",
+        ],
+      },
+      {
+        eyebrow: "Teesside coverage and handover",
+        heading: "Local shed and outbuilding roof enquiries linked to the nearest area page",
+        paragraphs: [
+          "The service covers Middlesbrough, Stockton-on-Tees, Thornaby, Billingham, Redcar, Yarm, Ingleby Barwick, Guisborough, Eston, Hartlepool and towards Darlington. Use the areas section on this page to open the nearest local asbestos removal page. Each local page explains relevant districts, roads, industrial estates or access context, while this page stays focused on the shed and outbuilding roof decision.",
+          "Before choosing a quotation, compare the same finish point: sheets only, roof and frame, or complete structure. Check whether lawful transport and disposal are included, who protects the building if the frame remains, and whether the replacement installer has confirmed their start date. If access, neighbours or the condition of the structure remains uncertain, arrange a site review rather than accepting a price based on missing information.",
+        ],
+      },
+    ],
+    quoteHeading: "Send the whole outbuilding and the route to it.",
+    quoteCopy: "Include the confirmed material or survey position, all-side photographs, roof dimensions, condition, contents, shared boundaries, narrowest access point and whether you need sheets, frame or the complete structure removed.",
   },
 
   "asbestos-aib-removal-middlesbrough-teesside": {

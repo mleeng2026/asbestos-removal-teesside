@@ -167,6 +167,120 @@ export const services: ServicePage[] = [
   },
   {
     kind: "service",
+    slug: "asbestos-warehouse-corrugated-roof-removal-teesside",
+    title: "Asbestos Warehouse & Corrugated Roof Removal Teesside",
+    navTitle: "Warehouse & corrugated roofs",
+    eyebrow: "Warehouses, factories, workshops & commercial units",
+    summary:
+      "Asbestos warehouse roof removal and commercial corrugated asbestos roof removal across Middlesbrough, Stockton-on-Tees and the wider Teesside industrial area.",
+    intro:
+      "A warehouse roof is not priced from sheet area alone. Height, rooflights, gutters, live operations, stock below, fragile-roof controls, lifting access and the replacement-roof sequence all affect the plan. Send the roof survey or sample evidence with drawings, safe photographs and the programme that removal must support.",
+    triggers: [
+      "A warehouse or factory reroofing programme is ready to start",
+      "Leaks or damaged corrugated sheets are affecting stock or operations",
+      "Solar, demolition or redevelopment work is blocked by the existing roof",
+      "A landlord or facilities team needs a defined tender scope",
+    ],
+    contexts: [
+      "Warehouses and distribution buildings",
+      "Factories, workshops and engineering units",
+      "Industrial estates and multi-unit sites",
+      "Occupied premises and phased roof programmes",
+    ],
+    quote:
+      "Send the roof survey, plan or measured dimensions, ground-level and internal photographs, eaves and ridge height, building use, access rules and replacement-roof programme.",
+    image: {
+      src: "/asbestos-warehouse-corrugated-roof-removal-middlesbrough-teesamp-ts2.webp",
+      alt: "Large corrugated commercial roof photographed as asbestos warehouse roof removal context for Teesside",
+      name: "Asbestos warehouse roof removal Teesside – Middlesbrough TeesAMP TS2 context",
+      caption: "Genuine North East commercial-roof photography showing the scale, corrugated sheets and height considered for warehouse roof removal. Survey or sampling evidence confirms asbestos content.",
+      width: 1600, height: 1200, locationName: "Middlesbrough and TeesAMP", postalCode: "TS2", latitude: 54.5847, longitude: -1.2397,
+    },
+    faqs: [
+      { question: "Can you remove a corrugated asbestos roof from an operational warehouse?", answer: "Yes, subject to the confirmed material, safe access and a workable programme. Explain what remains operational, what is stored below and whether removal must be phased around production, tenants or deliveries." },
+      { question: "What information is needed for a warehouse roof quotation?", answer: "Send the survey or sample evidence, plans or measurements, roof height, rooflight and gutter details, safe external and internal photographs, access restrictions and the replacement-roof sequence." },
+      { question: "Can asbestos roof removal be coordinated with the replacement roofer?", answer: "Yes. Identify who provides scaffolding or lifting access, temporary weather protection, structural repairs and the new roof, then agree the handover between contractors before work starts." },
+      { question: "Do you cover industrial estates across Teesside?", answer: "Yes. Commercial roof enquiries are covered around Middlesbrough, Stockton-on-Tees, Thornaby, Billingham, Redcar, Hartlepool and nearby Teesside industrial areas." },
+    ],
+  },
+  {
+    kind: "service",
+    slug: "asbestos-farm-building-roof-removal-teesside",
+    title: "Asbestos Farm Building Roof Removal Teesside",
+    navTitle: "Farm & agricultural roofs",
+    eyebrow: "Barns, stores, livestock buildings & rural outbuildings",
+    summary:
+      "Asbestos farm building roof removal for barns, agricultural stores, workshops and rural outbuildings across Teesside and the surrounding North Yorkshire and County Durham service area.",
+    intro:
+      "Farm roof projects need to work around animals, feed, machinery, seasonal use and the space available for access equipment and sheet handling. The building may be remote from the road but still busy every day. Send the confirmed roof information, dimensions, photographs and the dates that matter to the farm operation and replacement roofer.",
+    triggers: [
+      "A barn, machinery store or livestock building needs reroofing",
+      "Storm damage or leaks have affected older corrugated sheets",
+      "A redundant agricultural building is being dismantled or converted",
+      "A farmhouse garage, shed or linked outbuilding is part of wider works",
+    ],
+    contexts: [
+      "Barns and livestock buildings",
+      "Machinery, feed and general-purpose stores",
+      "Farmhouse garages and linked outbuildings",
+      "Rural workshops and redundant agricultural buildings",
+    ],
+    quote:
+      "Send wide photographs from safe ground level, roof dimensions and height, the survey or sample result, building use, nearby livestock or machinery, access route and reroofing or demolition plan.",
+    image: {
+      src: "/asbestos-farm-building-roof-removal-teesside-stokesley-ts9.webp",
+      alt: "Agricultural buildings with corrugated roofs shown as asbestos farm building roof removal context for Teesside",
+      name: "Asbestos farm building roof removal Teesside – Stokesley TS9 service context",
+      caption: "Genuine North East agricultural-building photography showing connected corrugated roofs and restricted working space. The image is not used by itself to identify asbestos.",
+      width: 1600, height: 1043, locationName: "Stokesley and rural Teesside", postalCode: "TS9", latitude: 54.4702, longitude: -1.1936,
+    },
+    faqs: [
+      { question: "Do you remove asbestos roofs from barns and agricultural buildings?", answer: "Yes. Barns, machinery stores, livestock buildings, workshops and other farm structures can be assessed when the roof material and complete scope are known." },
+      { question: "Can a farmhouse or farm outbuilding roof be included?", answer: "Yes. List each structure separately and show whether roofs, gutters or frames connect. A farmhouse garage or outbuilding may need a different access and handover plan from a large barn." },
+      { question: "How should livestock and machinery be handled during roof removal?", answer: "Explain what normally occupies the building and what can be moved before work. Livestock, feed, vehicles and machinery must be considered when planning the work area, access and programme." },
+      { question: "Can you quote a rural roof from photographs?", answer: "Photographs and measurements help, but a site visit may still be needed for height, condition, access, connected structures or a larger roof. Do not climb onto fragile sheets to collect pictures." },
+    ],
+  },
+  {
+    kind: "service",
+    slug: "asbestos-shed-outbuilding-roof-removal-teesside",
+    title: "Asbestos Shed & Outbuilding Roof Removal Teesside",
+    navTitle: "Shed & outbuilding roofs",
+    eyebrow: "Garden sheds, garages, stores & small workshops",
+    summary:
+      "Asbestos shed roof removal and asbestos outbuilding roof removal for homes, landlords and small business premises across Middlesbrough and Teesside.",
+    intro:
+      "Small roofs still need a complete scope. Narrow side passages, shared alleys, trees, boundary walls, attached gutters and belongings inside can matter more than the number of sheets. Tell us whether you need the roof covering removed, the frame dismantled or the whole shed, garage or store cleared for replacement.",
+    triggers: [
+      "A garden shed, garage or store is being replaced",
+      "Damaged or leaking sheets need removal before repairs",
+      "A house sale, garden project or extension requires the structure cleared",
+      "A landlord or small business needs an unused outbuilding removed",
+    ],
+    contexts: [
+      "Garden sheds and domestic garages",
+      "Rear-yard stores and lean-to structures",
+      "Allotment, workshop and small commercial outbuildings",
+      "Attached roofs and buildings with shared boundaries",
+    ],
+    quote:
+      "Send safe photographs from every accessible side, approximate roof length and width, access width, sheet condition, what remains inside and whether the roof, frame or complete structure is included.",
+    image: {
+      src: "/asbestos-shed-outbuilding-roof-removal-stockton-norton-ts20.webp",
+      alt: "Corrugated garage and outbuilding roofs shown as asbestos shed roof removal context for Teesside",
+      name: "Asbestos shed and outbuilding roof removal Teesside – Stockton Norton TS20 context",
+      caption: "Genuine North East garage and outbuilding roof photography showing nearby structures, vegetation and restricted access that can affect removal planning.",
+      width: 1600, height: 1182, locationName: "Stockton-on-Tees and Norton", postalCode: "TS20", latitude: 54.5908, longitude: -1.3102,
+    },
+    faqs: [
+      { question: "Can you remove an asbestos roof from a garden shed or outbuilding?", answer: "Yes. Send photographs, dimensions, access information and any survey or sample result, and explain whether only the sheets or the complete structure must be removed." },
+      { question: "Do I need to empty the shed or garage first?", answer: "Usually the working area and access route need to be clear. Show what is stored inside and agree who moves it before the removal date rather than assuming it can remain beneath the roof." },
+      { question: "Can you remove a roof reached only through a narrow side passage?", answer: "Restricted access can be assessed. Measure the narrowest gate or passage, photograph the full route and mention steps, tight corners, shared alleys or access through the house." },
+      { question: "Can the whole shed or outbuilding be dismantled?", answer: "That can be considered, but it must be written into the scope. Distinguish asbestos-sheet removal from frame dismantling, contents clearance, base removal and any replacement building work." },
+    ],
+  },
+  {
+    kind: "service",
     slug: "asbestos-aib-removal-middlesbrough-teesside",
     title: "Asbestos AIB Removal Middlesbrough & Teesside",
     navTitle: "AIB removal",

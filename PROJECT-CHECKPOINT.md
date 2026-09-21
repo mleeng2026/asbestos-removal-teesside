@@ -73,3 +73,14 @@ Required sequence:
 - Preserved the complete V3 content upgrade at `18afddf`, including the pipe-insulation service, long-form local/service editorial, audit scripts and apple-touch icon.
 - Added dedicated primary-image treatment to the homepage, services hub and areas hub so every one of the 20 commercial routes now aligns its visible image, Open Graph, Twitter, ImageObject and image-sitemap URL.
 - Re-ran the production build and both repository audit scripts successfully after reconciliation.
+
+## Roof-service expansion — 21 September 2026
+
+- Added dedicated pages for warehouse and commercial corrugated roofs, farm and agricultural building roofs, and shed and outbuilding roofs.
+- Kept the established general asbestos roof removal page as the parent service and protected every existing slug.
+- Added a full “Where we cover” module to every service page, linking service + location anchors to all nine existing local area pages.
+- Selected three visually checked real North East roof photographs from the approved Drive library and did not claim they were completed jobs in the assigned target locations.
+- Updated the site inventory, location-image map, service hub, sitemap and primary-image schema/social/image-sitemap signals through the shared data model.
+- New rendered editorial word counts: warehouse 1,294; farm 1,291; shed/outbuilding 1,253, excluding shared navigation, related links and forms.
+- Highest five-word overlap involving the new roof pages: 11.5%, giving at least 88.5% phrase-level separation under the internal audit method.
+- Next.js static production build and the full 26-route site audit pass; JSON-LD, canonicals, links, images, social metadata and sitemap checks pass.
