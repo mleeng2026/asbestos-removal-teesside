@@ -13,15 +13,15 @@ export function metadataForSlug(slug: string): Metadata {
   const page = [...services, ...areas].find((item) => item.slug === slug);
   if (!page) return {};
   const description = page.kind === "area" ? page.metaDescription : (page.summary.length > 158 ? `${page.summary.slice(0, 155)}…` : page.summary);
-  const areaImage = page.kind === "area" ? page.primaryImage : undefined;
-  const image = areaImage ? `${site.url}${areaImage.src}` : undefined;
+  const primaryImage = page.kind === "area" ? page.primaryImage : page.image;
+  const image = `${site.url}${primaryImage.src}`;
   return {
     title: page.kind === "area" ? { absolute: `${page.title} | Free Quote` } : `${page.title} | Free Quote`,
     description,
     alternates: { canonical: `${site.url}/${page.slug}` },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
-    openGraph: { title: page.title, description, url: `${site.url}/${page.slug}`, type: "website", ...(image && areaImage ? { images: [{ url: image, alt: areaImage.alt, width: areaImage.width, height: areaImage.height }] } : {}) },
-    twitter: { card: "summary_large_image", title: page.title, description, ...(image ? { images: [image] } : {}) },
+    openGraph: { title: page.title, description, url: `${site.url}/${page.slug}`, type: "website", images: [{ url: image, alt: primaryImage.alt, width: primaryImage.width, height: primaryImage.height }] },
+    twitter: { card: "summary_large_image", title: page.title, description, images: [image] },
   };
 }
 
@@ -29,7 +29,7 @@ function schema(page: ServicePage | AreaPage) {
   const url = `${site.url}/${page.slug}`;
   const serviceName = page.kind === "service" ? page.title : `Asbestos Removal ${page.navTitle}`;
   const faqs = faqsFor(page);
-  const image = page.kind === "area" ? page.primaryImage : undefined;
+  const image = page.kind === "area" ? page.primaryImage : page.image;
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -47,7 +47,7 @@ function schema(page: ServicePage | AreaPage) {
         breadcrumb: { "@id": `${url}#breadcrumb` },
         hasPart: { "@id": `${url}#faq` },
         inLanguage: "en-GB",
-        ...(image ? { primaryImageOfPage: { "@id": `${url}#primaryimage` } } : {}),
+        primaryImageOfPage: { "@id": `${url}#primaryimage` },
       },
       {
         "@type": "Service",
@@ -58,10 +58,10 @@ function schema(page: ServicePage | AreaPage) {
         areaServed: page.kind === "area" ? page.schemaAreas.map((name) => ({ "@type": "Place", name, containedInPlace: { "@type": "AdministrativeArea", name: "Teesside and the North East" } })) : "Middlesbrough and Teesside",
         mainEntityOfPage: { "@id": `${url}#webpage` },
         isRelatedTo: { "@id": `${site.url}/#service` },
-        ...(image ? { image: { "@id": `${url}#primaryimage` } } : {}),
+        image: { "@id": `${url}#primaryimage` },
         url,
       },
-      ...(image ? [{
+      {
         "@type": "ImageObject",
         "@id": `${url}#primaryimage`,
         url: `${site.url}${image.src}`,
@@ -71,7 +71,22 @@ function schema(page: ServicePage | AreaPage) {
         width: image.width,
         height: image.height,
         representativeOfPage: true,
-      }] : []),
+        contentLocation: {
+          "@type": "Place",
+          name: image.location.name,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: image.location.locality,
+            postalCode: image.location.postalCode,
+            addressCountry: "GB",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: image.location.latitude,
+            longitude: image.location.longitude,
+          },
+        },
+      },
       {
         "@type": "BreadcrumbList",
         "@id": `${url}#breadcrumb`,
@@ -94,6 +109,7 @@ export function DetailPage({ slug }: { slug: string }) {
   const page = [...services, ...areas].find((item) => item.slug === slug);
   if (!page) notFound();
   const isService = page.kind === "service";
+  const primaryImage = isService ? (page as ServicePage).image : (page as AreaPage).primaryImage;
   const localDepth = !isService ? areaDepth[page.slug] : undefined;
   const pageFaqs = faqsFor(page);
   const relatedServices = isService
@@ -107,13 +123,11 @@ export function DetailPage({ slug }: { slug: string }) {
     <>
       <Header />
       <main>
-        <section className={`detail-hero ${!isService ? "area-detail-hero" : ""}`}>
-          {!isService && (
-            <figure className="detail-hero-media">
-              <img src={(page as AreaPage).primaryImage.src} alt={(page as AreaPage).primaryImage.alt} width={(page as AreaPage).primaryImage.width} height={(page as AreaPage).primaryImage.height} fetchPriority="high" />
-              <figcaption>{(page as AreaPage).primaryImage.caption}</figcaption>
-            </figure>
-          )}
+        <section className="detail-hero area-detail-hero">
+          <figure className="detail-hero-media">
+            <img src={primaryImage.src} alt={primaryImage.alt} title={primaryImage.name} width={primaryImage.width} height={primaryImage.height} fetchPriority="high" />
+            <figcaption>{primaryImage.caption}</figcaption>
+          </figure>
           <div className="shell">
             <nav className="breadcrumbs" aria-label="Breadcrumb">
               <Link href="/">Home</Link><span>/</span><Link href={isService ? "/services" : "/areas"}>{isService ? "Services" : "Areas"}</Link><span>/</span><span>{page.navTitle}</span>
@@ -150,23 +164,6 @@ export function DetailPage({ slug }: { slug: string }) {
             </div>
           </div>
         </section>
-
-        {isService && (page as ServicePage).image && (
-          <section className="service-photo-section" aria-label={`${page.navTitle} project photography`}>
-            <div className="shell">
-              <figure className="service-photo">
-                <img
-                  src={(page as ServicePage).image!.src}
-                  alt={(page as ServicePage).image!.alt}
-                />
-                <figcaption>
-                  <span>Real North East project photography</span>
-                  <p>{(page as ServicePage).image!.caption}</p>
-                </figcaption>
-              </figure>
-            </div>
-          </section>
-        )}
 
         <section className="section detail-points">
           <div className="shell">

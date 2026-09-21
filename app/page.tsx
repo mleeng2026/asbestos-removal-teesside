@@ -78,15 +78,25 @@ function jsonLd() {
         about: { "@id": `${base}/#business` },
         mainEntity: { "@id": `${base}/#service` },
         primaryImageOfPage: { "@id": `${base}/#primaryimage` },
+        hasPart: { "@id": `${base}/#faq` },
         inLanguage: "en-GB",
       },
       {
         "@type": "ImageObject",
         "@id": `${base}/#primaryimage`,
-        url: `${base}/asbestos-removal-middlesbrough-teesside-commercial-roof.webp`,
-        contentUrl: `${base}/asbestos-removal-middlesbrough-teesside-commercial-roof.webp`,
+        url: `${base}/asbestos-removal-middlesbrough-teesside-middlesbrough-town-centre-ts1-5ad.webp`,
+        contentUrl: `${base}/asbestos-removal-middlesbrough-teesside-middlesbrough-town-centre-ts1-5ad.webp`,
+        name: "Asbestos removal Middlesbrough and Teesside – Middlesbrough town centre TS1 5AD",
         caption: "Industrial roof lining photographed in connection with a Middlesbrough and Teesside asbestos removal enquiry",
+        width: 1600,
+        height: 1200,
         representativeOfPage: true,
+        contentLocation: {
+          "@type": "Place",
+          name: "Middlesbrough town centre",
+          address: { "@type": "PostalAddress", addressLocality: "Middlesbrough", postalCode: "TS1 5AD", addressCountry: "GB" },
+          geo: { "@type": "GeoCoordinates", latitude: 54.57643, longitude: -1.23683 },
+        },
       },
       {
         "@type": "Service",
@@ -95,6 +105,8 @@ function jsonLd() {
         serviceType: services.map((item) => item.navTitle),
         provider: { "@id": `${base}/#business` },
         areaServed: "Middlesbrough and Teesside",
+        image: { "@id": `${base}/#primaryimage` },
+        mainEntityOfPage: { "@id": `${base}/#webpage` },
         url: base,
       },
       {
@@ -116,7 +128,7 @@ export default function Home() {
       <Header />
       <main>
         <section className="hero">
-          <img className="hero-image" src="/asbestos-removal-middlesbrough-teesside-commercial-roof.webp" alt="Industrial roof lining photographed for an asbestos removal enquiry covering Middlesbrough and Teesside" width="1600" height="1200" fetchPriority="high" />
+          <img className="hero-image" src="/asbestos-removal-middlesbrough-teesside-middlesbrough-town-centre-ts1-5ad.webp" alt="Industrial roof lining photographed for an asbestos removal enquiry covering Middlesbrough and Teesside" title="Asbestos removal Middlesbrough and Teesside – Middlesbrough town centre TS1 5AD" width="1600" height="1200" fetchPriority="high" />
           <div className="hero-scrim" />
           <div className="shell hero-grid">
             <div className="hero-copy">

@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   title: { absolute: "Asbestos Removal Areas | Middlesbrough & Teesside" },
   description: "Find local asbestos removal pages for Middlesbrough, Stockton, Thornaby, Billingham, Redcar, Yarm, Guisborough, Hartlepool and Darlington.",
   alternates: { canonical: `${site.url}/areas` },
-  robots: { index: true, follow: true },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
+  openGraph: { title: "Asbestos Removal Areas | Middlesbrough & Teesside", description: "Find local asbestos removal pages for Middlesbrough, Stockton, Thornaby, Billingham, Redcar, Yarm, Guisborough, Hartlepool and Darlington.", url: `${site.url}/areas`, type: "website", images: [{ url: `${site.url}/asbestos-removal-areas-teesside-middlesbrough-town-centre-ts1-5ad.webp`, width: 1600, height: 1200, alt: "Commercial roof project context for local asbestos removal coverage across Middlesbrough and Teesside" }] },
+  twitter: { card: "summary_large_image", title: "Asbestos Removal Areas | Middlesbrough & Teesside", description: "Find the closest local asbestos removal coverage page across Teesside and nearby North East areas.", images: [`${site.url}/asbestos-removal-areas-teesside-middlesbrough-town-centre-ts1-5ad.webp`] },
 };
 
 function jsonLd() {
@@ -15,7 +17,8 @@ function jsonLd() {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebPage", "@id": `${url}#webpage`, url, name: "Asbestos Removal Areas across Middlesbrough and Teesside", isPartOf: { "@id": `${site.url}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` }, mainEntity: { "@id": `${url}#areas` } },
+      { "@type": "WebPage", "@id": `${url}#webpage`, url, name: "Asbestos Removal Areas across Middlesbrough and Teesside", isPartOf: { "@id": `${site.url}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` }, mainEntity: { "@id": `${url}#areas` }, primaryImageOfPage: { "@id": `${url}#primaryimage` } },
+      { "@type": "ImageObject", "@id": `${url}#primaryimage`, url: `${site.url}/asbestos-removal-areas-teesside-middlesbrough-town-centre-ts1-5ad.webp`, contentUrl: `${site.url}/asbestos-removal-areas-teesside-middlesbrough-town-centre-ts1-5ad.webp`, name: "Asbestos removal areas Teesside – Middlesbrough town centre TS1 5AD", caption: "Genuine North East commercial-roof photography used as coverage context for the local asbestos removal areas hub.", width: 1600, height: 1200, representativeOfPage: true, contentLocation: { "@type": "Place", name: "Middlesbrough town centre", address: { "@type": "PostalAddress", addressLocality: "Middlesbrough", postalCode: "TS1 5AD", addressCountry: "GB" }, geo: { "@type": "GeoCoordinates", latitude: 54.57643, longitude: -1.23683 } } },
       { "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`, itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: site.url },
         { "@type": "ListItem", position: 2, name: "Areas", item: url },
@@ -31,12 +34,13 @@ export default function AreasHub() {
       <Header />
       <main>
         <section className="hub-hero">
+          <img className="hub-hero-image" src="/asbestos-removal-areas-teesside-middlesbrough-town-centre-ts1-5ad.webp" alt="Commercial roof project context for local asbestos removal coverage across Middlesbrough and Teesside" title="Asbestos removal areas Teesside – Middlesbrough town centre TS1 5AD" width="1600" height="1200" fetchPriority="high" />
           <div className="shell hub-hero-copy">
             <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span>Areas</span></nav>
             <p className="eyebrow light">Middlesbrough · Teesside · nearby North East</p>
             <h1>Local Asbestos Removal Areas</h1>
             <p>Choose the page closest to the property. Each one covers real buyer situations, relevant streets and employment areas, access questions, confirmed project evidence and the nearest useful service links.</p>
-            <div className="hero-actions"><a className="button primary" href={`tel:${site.phoneHref}`}>Call {site.phone}</a><a className="button ghost" href="/#quote">Free quote</a></div>
+            <div className="hero-actions"><a className="button primary" href={`tel:${site.phoneHref}`}>Call {site.phone}</a><Link className="button ghost" href="/#quote">Free quote</Link></div>
           </div>
         </section>
         <CallBand />

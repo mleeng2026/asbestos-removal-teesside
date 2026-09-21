@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 import { site } from "@/lib/site-data";
 
 export function QuoteForm() {
@@ -57,7 +58,7 @@ export function QuoteForm() {
       </div>
       <label className="consent span-2">
         <input name="privacy_consent" type="checkbox" value="yes" required />
-        <span>I agree that my details can be used to reply to this enquiry. <a href="/privacy">Privacy notice</a>.</span>
+        <span>I agree that my details can be used to reply to this enquiry. <Link href="/privacy">Privacy notice</Link>.</span>
       </label>
       <button className="submit-button span-2" type="submit" disabled={status === "sending"}>
         {status === "sending" ? "Sending…" : "Free quote"}
