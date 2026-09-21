@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   title: { absolute: "Asbestos Removal Areas | Middlesbrough & Teesside" },
   description: "Find local asbestos removal pages for Middlesbrough, Stockton, Thornaby, Billingham, Redcar, Yarm, Guisborough, Hartlepool and Darlington.",
   alternates: { canonical: `${site.url}/areas` },
-  robots: { index: true, follow: true },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
+  openGraph: { title: "Asbestos Removal Areas | Middlesbrough & Teesside", description: "Find local asbestos removal pages for Middlesbrough, Stockton, Thornaby, Billingham, Redcar, Yarm, Guisborough, Hartlepool and Darlington.", url: `${site.url}/areas`, type: "website", images: [{ url: `${site.url}/asbestos-removal-areas-middlesbrough-teesside-teesamp-ts2.webp`, width: 1600, height: 1200, alt: "Commercial project context for local asbestos removal coverage across Middlesbrough and Teesside" }] },
+  twitter: { card: "summary_large_image", title: "Asbestos Removal Areas | Middlesbrough & Teesside", description: "Find the closest local asbestos removal coverage page across Teesside and nearby North East areas.", images: [`${site.url}/asbestos-removal-areas-middlesbrough-teesside-teesamp-ts2.webp`] },
 };
 
 function jsonLd() {
@@ -15,7 +17,8 @@ function jsonLd() {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebPage", "@id": `${url}#webpage`, url, name: "Asbestos Removal Areas across Middlesbrough and Teesside", isPartOf: { "@id": `${site.url}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` }, mainEntity: { "@id": `${url}#areas` } },
+      { "@type": "WebPage", "@id": `${url}#webpage`, url, name: "Asbestos Removal Areas across Middlesbrough and Teesside", isPartOf: { "@id": `${site.url}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` }, mainEntity: { "@id": `${url}#areas` }, primaryImageOfPage: { "@id": `${url}#primaryimage` } },
+      { "@type": "ImageObject", "@id": `${url}#primaryimage`, url: `${site.url}/asbestos-removal-areas-middlesbrough-teesside-teesamp-ts2.webp`, contentUrl: `${site.url}/asbestos-removal-areas-middlesbrough-teesside-teesamp-ts2.webp`, name: "Asbestos removal areas Middlesbrough and Teesside – TeesAMP TS2", caption: "Genuine North East commercial-project photography used as coverage context for the local asbestos removal areas hub.", width: 1600, height: 1200, representativeOfPage: true, contentLocation: { "@type": "Place", name: "Middlesbrough TeesAMP", address: { "@type": "PostalAddress", addressLocality: "Middlesbrough", postalCode: "TS2", addressCountry: "GB" }, geo: { "@type": "GeoCoordinates", latitude: 54.5847, longitude: -1.2397 } } },
       { "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`, itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: site.url },
         { "@type": "ListItem", position: 2, name: "Areas", item: url },
@@ -31,6 +34,7 @@ export default function AreasHub() {
       <Header />
       <main>
         <section className="hub-hero">
+          <img className="hub-hero-image" src="/asbestos-removal-areas-middlesbrough-teesside-teesamp-ts2.webp" alt="Commercial project context for local asbestos removal coverage across Middlesbrough and Teesside" title="Asbestos removal areas Middlesbrough and Teesside – TeesAMP TS2" width="1600" height="1200" fetchPriority="high" />
           <div className="shell hub-hero-copy">
             <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span>Areas</span></nav>
             <p className="eyebrow light">Middlesbrough · Teesside · nearby North East</p>

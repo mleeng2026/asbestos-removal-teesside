@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   title: { absolute: "Asbestos Services | Middlesbrough & Teesside" },
   description: "Compare asbestos removal, surveys, testing, Artex, AIB, flooring, roof and commercial asbestos services across Middlesbrough and Teesside.",
   alternates: { canonical: `${site.url}/services` },
-  robots: { index: true, follow: true },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
+  openGraph: { title: "Asbestos Services | Middlesbrough & Teesside", description: "Compare asbestos removal, surveys, testing, Artex, AIB, flooring, roof and commercial asbestos services across Middlesbrough and Teesside.", url: `${site.url}/services`, type: "website", images: [{ url: `${site.url}/asbestos-removal-services-middlesbrough-teesside-riverside-park-ts2.webp`, width: 1600, height: 1200, alt: "Commercial roof project context for asbestos removal services across Middlesbrough and Teesside" }] },
+  twitter: { card: "summary_large_image", title: "Asbestos Services | Middlesbrough & Teesside", description: "Compare asbestos removal, survey, testing and commercial services across Teesside.", images: [`${site.url}/asbestos-removal-services-middlesbrough-teesside-riverside-park-ts2.webp`] },
 };
 
 function jsonLd() {
@@ -15,7 +17,8 @@ function jsonLd() {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebPage", "@id": `${url}#webpage`, url, name: "Asbestos Services across Middlesbrough and Teesside", isPartOf: { "@id": `${site.url}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` }, mainEntity: { "@id": `${url}#services` } },
+      { "@type": "WebPage", "@id": `${url}#webpage`, url, name: "Asbestos Services across Middlesbrough and Teesside", isPartOf: { "@id": `${site.url}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` }, mainEntity: { "@id": `${url}#services` }, primaryImageOfPage: { "@id": `${url}#primaryimage` } },
+      { "@type": "ImageObject", "@id": `${url}#primaryimage`, url: `${site.url}/asbestos-removal-services-middlesbrough-teesside-riverside-park-ts2.webp`, contentUrl: `${site.url}/asbestos-removal-services-middlesbrough-teesside-riverside-park-ts2.webp`, name: "Asbestos removal services Middlesbrough and Teesside – Riverside Park TS2", caption: "Genuine North East commercial-roof photography used as project context for the asbestos services hub.", width: 1600, height: 1200, representativeOfPage: true, contentLocation: { "@type": "Place", name: "Middlesbrough Riverside Park", address: { "@type": "PostalAddress", addressLocality: "Middlesbrough", postalCode: "TS2", addressCountry: "GB" }, geo: { "@type": "GeoCoordinates", latitude: 54.5847, longitude: -1.2397 } } },
       { "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`, itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: site.url },
         { "@type": "ListItem", position: 2, name: "Services", item: url },
@@ -31,6 +34,7 @@ export default function ServicesHub() {
       <Header />
       <main>
         <section className="hub-hero services-hub-hero">
+          <img className="hub-hero-image" src="/asbestos-removal-services-middlesbrough-teesside-riverside-park-ts2.webp" alt="Commercial roof project context for asbestos removal services across Middlesbrough and Teesside" title="Asbestos removal services Middlesbrough and Teesside – Riverside Park TS2" width="1600" height="1200" fetchPriority="high" />
           <div className="shell hub-hero-copy">
             <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span>Services</span></nav>
             <p className="eyebrow light">Removal · surveys · testing · disposal</p>

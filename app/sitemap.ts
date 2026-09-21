@@ -11,19 +11,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: updated,
       changeFrequency: "weekly",
       priority: 1,
-      images: [`${site.url}/asbestos-removal-middlesbrough-teesside-commercial-roof.webp`],
+      images: [`${site.url}/asbestos-removal-middlesbrough-teesside-teesamp-ts2.webp`],
     },
     {
       url: `${site.url}/services`,
       lastModified: updated,
       changeFrequency: "monthly",
       priority: 0.9,
+      images: [`${site.url}/asbestos-removal-services-middlesbrough-teesside-riverside-park-ts2.webp`],
     },
     {
       url: `${site.url}/areas`,
       lastModified: updated,
       changeFrequency: "monthly",
       priority: 0.9,
+      images: [`${site.url}/asbestos-removal-areas-middlesbrough-teesside-teesamp-ts2.webp`],
     },
     ...services.map((page) => ({
       url: `${site.url}/${page.slug}`,

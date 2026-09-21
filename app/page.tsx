@@ -82,13 +82,14 @@ function jsonLd() {
         about: { "@id": `${base}/#business` },
         mainEntity: { "@id": `${base}/#service` },
         primaryImageOfPage: { "@id": `${base}/#primaryimage` },
+        hasPart: { "@id": `${base}/#faq` },
         inLanguage: "en-GB",
       },
       {
         "@type": "ImageObject",
         "@id": `${base}/#primaryimage`,
-        url: `${base}/asbestos-removal-middlesbrough-teesside-commercial-roof.webp`,
-        contentUrl: `${base}/asbestos-removal-middlesbrough-teesside-commercial-roof.webp`,
+        url: `${base}/asbestos-removal-middlesbrough-teesside-teesamp-ts2.webp`,
+        contentUrl: `${base}/asbestos-removal-middlesbrough-teesside-teesamp-ts2.webp`,
         caption: "Industrial roof lining photographed in connection with a Middlesbrough and Teesside asbestos removal enquiry",
         name: "Asbestos removal Middlesbrough and Teesside – commercial project context",
         width: 1600,
@@ -109,6 +110,7 @@ function jsonLd() {
         provider: { "@id": `${base}/#business` },
         areaServed: "Middlesbrough and Teesside",
         image: { "@id": `${base}/#primaryimage` },
+        mainEntityOfPage: { "@id": `${base}/#webpage` },
         url: base,
       },
       {
@@ -130,7 +132,7 @@ export default function Home() {
       <Header />
       <main>
         <section className="hero">
-          <img className="hero-image" src="/asbestos-removal-middlesbrough-teesside-commercial-roof.webp" alt="Industrial roof lining photographed for an asbestos removal enquiry covering Middlesbrough and Teesside" width="1600" height="1200" fetchPriority="high" />
+          <img className="hero-image" src="/asbestos-removal-middlesbrough-teesside-teesamp-ts2.webp" alt="Industrial roof lining photographed for an asbestos removal enquiry covering Middlesbrough and Teesside" title="Asbestos removal Middlesbrough and Teesside – TeesAMP TS2" width="1600" height="1200" fetchPriority="high" />
           <div className="hero-scrim" />
           <div className="shell hero-grid">
             <div className="hero-copy">

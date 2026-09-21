@@ -67,3 +67,9 @@ Required sequence:
 - Complete desktop and mobile visual QA against the live deployment.
 - Verify HTTPS, the sitemap, favicon/apple icon, the new pipe page and representative schema on the live domain.
 - Record the final commit and successful deployment run IDs here.
+
+## Final reconciliation
+
+- Preserved the complete V3 content upgrade at `18afddf`, including the pipe-insulation service, long-form local/service editorial, audit scripts and apple-touch icon.
+- Added dedicated primary-image treatment to the homepage, services hub and areas hub so every one of the 20 commercial routes now aligns its visible image, Open Graph, Twitter, ImageObject and image-sitemap URL.
+- Re-ran the production build and both repository audit scripts successfully after reconciliation.
