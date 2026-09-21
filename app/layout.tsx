@@ -22,10 +22,18 @@ export const metadata: Metadata = {
     siteName: "Asbestos Removal Middlesbrough Teesside",
     locale: "en_GB",
     type: "website",
+    images: [{ url: "/asbestos-removal-middlesbrough-teesside-commercial-roof.webp", alt: "Commercial building interior shown as asbestos removal project context for Middlesbrough and Teesside", width: 1600, height: 1200 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Asbestos Removal Middlesbrough & Teesside",
+    description: "Asbestos removal, surveys and testing for homes, landlords, contractors and commercial sites across Teesside.",
+    images: [{ url: "/asbestos-removal-middlesbrough-teesside-commercial-roof.webp", alt: "Commercial building interior shown as asbestos removal project context for Middlesbrough and Teesside" }],
   },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
   },
 };
 

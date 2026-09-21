@@ -36,7 +36,7 @@ export default function ServicesHub() {
             <p className="eyebrow light">Removal · surveys · testing · disposal</p>
             <h1>Asbestos Services in Middlesbrough & Teesside</h1>
             <p>Choose the material or project route that best matches the live job. If you do not know what the material is, start with surveys and testing or call with the photographs and work planned.</p>
-            <div className="hero-actions"><a className="button primary" href={`tel:${site.phoneHref}`}>Call {site.phone}</a><a className="button ghost" href="/#quote">Free quote</a></div>
+            <div className="hero-actions"><a className="button primary" href={`tel:${site.phoneHref}`}>Call {site.phone}</a><Link className="button ghost" href="/#quote">Free quote</Link></div>
           </div>
         </section>
         <CallBand />

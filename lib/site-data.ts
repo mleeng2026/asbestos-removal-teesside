@@ -9,6 +9,19 @@ export const site = {
 
 export type Faq = { question: string; answer: string };
 
+export type PageImage = {
+  src: string;
+  alt: string;
+  name: string;
+  caption: string;
+  width: number;
+  height: number;
+  locationName: string;
+  postalCode: string;
+  latitude: number;
+  longitude: number;
+};
+
 export type ServicePage = {
   kind: "service";
   slug: string;
@@ -20,11 +33,7 @@ export type ServicePage = {
   triggers: string[];
   contexts: string[];
   quote: string;
-  image?: {
-    src: string;
-    alt: string;
-    caption: string;
-  };
+  image: PageImage;
   faqs: Faq[];
 };
 
@@ -53,6 +62,13 @@ export const services: ServicePage[] = [
     ],
     quote:
       "For the quickest assessment, send the postcode, material or survey wording, rough quantity, photographs, access details and required date.",
+    image: {
+      src: "/asbestos-removal-middlesbrough-linthorpe-road-ts1.webp",
+      alt: "Textured ceiling in a Middlesbrough property used as asbestos removal project context",
+      name: "Asbestos removal Middlesbrough – Linthorpe Road TS1 service context",
+      caption: "Genuine Middlesbrough project photography showing the room and textured-ceiling area considered during an asbestos enquiry. Survey or sampling evidence confirms the material.",
+      width: 1200, height: 1600, locationName: "Middlesbrough and Linthorpe Road", postalCode: "TS1", latitude: 54.5718937, longitude: -1.2393005,
+    },
     faqs: [
       { question: "Can I contact you before I have an asbestos survey?", answer: "Yes. Tell us what you have found and what work you are planning. We can explain whether sampling or a survey is the sensible next step before removal is priced." },
       { question: "Do you cover the whole Teesside area?", answer: "Yes. Enquiries are covered across Middlesbrough, Stockton-on-Tees, Thornaby, Billingham, Redcar, Yarm, Ingleby Barwick, Guisborough, Eston, Marske, Saltburn, Hartlepool and surrounding areas." },
@@ -79,6 +95,13 @@ export const services: ServicePage[] = [
     contexts: ["Management surveys", "Refurbishment and demolition surveys", "Targeted sampling and testing", "Survey review before quotation"],
     quote:
       "Tell us the property type, postcode, areas affected, proposed work and deadline. Existing plans or photographs are useful but not required for the first call.",
+    image: {
+      src: "/asbestos-survey-testing-stockton-norton-ts20.webp",
+      alt: "Loft space in Stockton-on-Tees photographed as asbestos survey and testing context",
+      name: "Asbestos survey and testing Stockton-on-Tees – Norton TS20 context",
+      caption: "Genuine Stockton-on-Tees project photography showing a loft and access context. It does not identify asbestos by appearance; inspection and laboratory evidence determine the material.",
+      width: 1600, height: 1200, locationName: "Stockton-on-Tees and Norton", postalCode: "TS20", latitude: 54.5908, longitude: -1.3102,
+    },
     faqs: [
       { question: "Which asbestos survey do I need?", answer: "It depends on the building and the planned work. Explain whether the property is being managed, refurbished or demolished and which areas will be disturbed, and the correct survey route can be discussed." },
       { question: "Can one material be sampled without a full survey?", answer: "Sometimes targeted sampling is appropriate when the concern is limited to one accessible material. The wider project still matters, so describe all planned disturbance before deciding." },
@@ -101,9 +124,11 @@ export const services: ServicePage[] = [
     quote:
       "Send the number of rooms, approximate ceiling or wall area, property postcode, photographs and any sample or survey result.",
     image: {
-      src: "/asbestos-artex-textured-ceiling-north-east.webp",
-      alt: "Textured ceiling photographed during a North East asbestos enquiry",
-      caption: "A genuine North East project photograph. The visible texture helps show the finish and coverage; a survey or sample result confirms whether asbestos is present.",
+      src: "/asbestos-artex-removal-middlesbrough-acklam-road-ts5.webp",
+      alt: "Textured ceiling photographed as Artex removal context for Middlesbrough and Teesside",
+      name: "Asbestos Artex removal Middlesbrough – Acklam Road TS5 context",
+      caption: "Genuine North East textured-ceiling photography showing the pattern and coverage considered during an Artex enquiry. A survey or sample result confirms whether asbestos is present.",
+      width: 2048, height: 1536, locationName: "Middlesbrough and Acklam Road", postalCode: "TS5", latitude: 54.5525, longitude: -1.2612,
     },
     faqs: [
       { question: "Does every Artex ceiling contain asbestos?", answer: "No. The appearance alone cannot confirm asbestos. If there is no reliable result, ask about testing before planned disturbance." },
@@ -127,9 +152,11 @@ export const services: ServicePage[] = [
     quote:
       "Send roof photographs, approximate length and width, height, postcode, access details and whether the structure or only the sheets are to be removed.",
     image: {
-      src: "/asbestos-cement-roof-north-east-commercial-building.webp",
-      alt: "Large corrugated roof on a North East commercial building",
-      caption: "A genuine North East commercial roof photograph showing the height, sheet layout and scale that need to be assessed before removal is quoted.",
+      src: "/asbestos-roof-removal-teesside-riverside-park-ts2.webp",
+      alt: "Large corrugated commercial roof shown as asbestos roof removal context in Teesside",
+      name: "Asbestos roof removal Teesside – Riverside Park TS2 context",
+      caption: "Genuine North East commercial-roof photography showing the height, sheet layout and scale assessed before removal. The photograph alone does not confirm asbestos content.",
+      width: 1600, height: 1200, locationName: "Teesside and Riverside Park", postalCode: "TS2", latitude: 54.5847, longitude: -1.2397,
     },
     faqs: [
       { question: "Can you remove an asbestos garage roof?", answer: "Yes. Send photographs, dimensions and the postcode, and say whether you need the sheets removed only or the wider garage dismantled." },
@@ -152,6 +179,13 @@ export const services: ServicePage[] = [
     contexts: ["Ceilings and wall panels", "Soffits and roofline boards", "Plant rooms, risers and service areas", "Domestic and commercial buildings"],
     quote:
       "Send the survey item, photographs, approximate area, height, access, occupancy and details of the work that follows removal.",
+    image: {
+      src: "/asbestos-aib-removal-thornaby-teesdale-ts17.webp",
+      alt: "Interior wall and room photographed as AIB removal project context for Teesside",
+      name: "Asbestos AIB removal Teesside – Thornaby and Teesdale TS17 context",
+      caption: "Genuine Thornaby interior-project photography showing the room and wall area used for access and scope context. The image is not used to identify the board as AIB.",
+      width: 1600, height: 1200, locationName: "Thornaby and Teesdale", postalCode: "TS17", latitude: 54.535257, longitude: -1.304718,
+    },
     faqs: [
       { question: "Does AIB removal require a licensed contractor?", answer: "Many AIB removal jobs require an HSE-licensed asbestos contractor. The material, condition, extent and work method determine the correct route." },
       { question: "Can you quote from an asbestos survey?", answer: "Yes. Send the item pages that identify the material, location, extent and recommendation, together with the postcode and project timing." },
@@ -173,11 +207,58 @@ export const services: ServicePage[] = [
     contexts: ["Kitchens and bathrooms", "Hallways and multiple rooms", "Shops, offices and communal areas", "Occupied and empty properties"],
     quote:
       "Send room dimensions, photographs, postcode, survey or sample result where available, and details of the replacement flooring programme.",
+    image: {
+      src: "/asbestos-floor-removal-billingham-cowpen-lane-ts23.webp",
+      alt: "Floor-removal work area photographed in Billingham as asbestos flooring context",
+      name: "Asbestos floor removal Billingham – Cowpen Lane TS23 context",
+      caption: "Genuine Billingham floor-removal project photography showing the work area. The survey or sample information, rather than appearance alone, confirms the asbestos scope.",
+      width: 1200, height: 1600, locationName: "Billingham and Cowpen Lane", postalCode: "TS23", latitude: 54.6095899, longitude: -1.2850231,
+    },
     faqs: [
       { question: "Can old floor tiles be identified from a photograph?", answer: "No. Photographs help with extent and access, but testing or a reliable survey is needed to confirm whether the tiles or adhesive contain asbestos." },
       { question: "Can you remove tiles before new flooring is fitted?", answer: "Yes. Tell us the required completion date and what the flooring contractor needs from the cleared surface." },
       { question: "Do you remove asbestos bitumen adhesive?", answer: "Asbestos bitumen adhesive removal can be assessed where it is confirmed or identified in a survey. The area, substrate and required finish affect the scope." },
       { question: "Can you price several rooms?", answer: "Yes. Provide a simple room list with approximate dimensions, photographs and any survey pages so the full area can be assessed together." },
+    ],
+  },
+  {
+    kind: "service",
+    slug: "asbestos-pipe-insulation-removal-middlesbrough-teesside",
+    title: "Asbestos Pipe Insulation Removal Middlesbrough & Teesside",
+    navTitle: "Pipe insulation & lagging",
+    eyebrow: "Plant rooms, basements, ducts & service routes",
+    summary:
+      "Asbestos pipe insulation and lagging removal enquiries for homes, managed buildings, commercial premises and industrial sites across Middlesbrough and Teesside.",
+    intro:
+      "Pipe insulation is a higher-risk asbestos material and should not be identified or disturbed from appearance alone. A useful enquiry includes the survey item, the length and condition of the confirmed insulation, service status, access and the mechanical work planned afterwards.",
+    triggers: [
+      "A survey identifies asbestos insulation or lagging on pipework",
+      "Heating, boiler or mechanical replacement is waiting",
+      "Damaged insulation has been reported in a service area",
+      "Refurbishment or demolition needs a pipe run made safe",
+    ],
+    contexts: [
+      "Basements and domestic service routes",
+      "Plant rooms, risers and ceiling voids",
+      "Commercial heating and mechanical systems",
+      "Industrial and institutional premises",
+    ],
+    quote:
+      "Send the survey pages, pipe location, approximate length and diameter, condition, photographs, access, whether the service is live and the work planned afterwards.",
+    image: {
+      src: "/asbestos-pipe-insulation-removal-teesside-haverton-hill-ts23.webp",
+      alt: "Commercial building interior used as asbestos pipe-insulation project context for Teesside",
+      name: "Asbestos pipe insulation removal Teesside – Haverton Hill TS23 context",
+      caption: "Genuine North East commercial-building photography used to show wider industrial access and building context. It is not presented as a photograph of asbestos pipe insulation.",
+      width: 1600, height: 1200, locationName: "Teesside and Haverton Hill", postalCode: "TS23", latitude: 54.6095899, longitude: -1.2850231,
+    },
+    faqs: [
+      { question: "Does asbestos pipe lagging require a licensed contractor?", answer: "Asbestos-containing pipe insulation is a higher-risk material and removal will commonly require an HSE-licensed contractor. The confirmed material, condition and exact task determine the legal route." },
+      { question: "Can pipe insulation be identified from a photograph?", answer: "No. A photograph can show location, condition and access, but it cannot reliably confirm asbestos content. Send the survey result or ask about appropriate inspection and sampling." },
+      { question: "What pipe measurements should I provide?", answer: "Give an approximate linear length and diameter, and include bends, valves, joints and sections that enter walls or voids. Wide photographs help show the service route and nearby equipment." },
+      { question: "Must the pipework be isolated before removal?", answer: "The service status must be established and any required shutdown coordinated by the responsible competent person. State whether the pipe is live, redundant or already isolated when you enquire." },
+      { question: "Can removal be coordinated with a boiler or heating project?", answer: "Yes. Provide the mechanical contractor's programme and explain what must be removed before their work can begin, together with responsibility for isolation and reinstatement." },
+      { question: "Do you cover commercial and industrial pipe lagging?", answer: "Enquiries are covered across Teesside, including plant rooms, service zones and industrial premises. Send the site rules, survey item, occupancy and shutdown constraints." },
     ],
   },
   {
@@ -194,6 +275,13 @@ export const services: ServicePage[] = [
     contexts: ["Warehouses and workshops", "Offices, shops and managed buildings", "Schools and public buildings", "Plant rooms and industrial premises"],
     quote:
       "Send the site address, survey or register items, drawings if available, access and occupancy information, programme dates and the next trade or inspection.",
+    image: {
+      src: "/commercial-asbestos-removal-middlesbrough-teesamp-ts2.webp",
+      alt: "Commercial building interior shown as asbestos removal context in Middlesbrough and Teesside",
+      name: "Commercial asbestos removal Middlesbrough – TeesAMP TS2 context",
+      caption: "Genuine North East commercial-building photography showing the internal roof, working height and industrial context considered during project planning.",
+      width: 1600, height: 1200, locationName: "Middlesbrough and TeesAMP", postalCode: "TS2", latitude: 54.5847, longitude: -1.2397,
+    },
     faqs: [
       { question: "Can you work from an asbestos register or survey?", answer: "Yes. Send the relevant entries and explain the planned project. A site visit can then focus on scope, access, occupancy and sequencing." },
       { question: "Can you plan work around tenants or operations?", answer: "Yes, where the scope allows. Provide working hours, access routes, occupied areas, shutdown constraints and the programme so these can be considered." },
@@ -222,14 +310,7 @@ export type AreaPage = {
   whatToSend: string[];
   nearbySlugs: string[];
   serviceSlugs: string[];
-  primaryImage: {
-    src: string;
-    alt: string;
-    name: string;
-    caption: string;
-    width: number;
-    height: number;
-  };
+  primaryImage: PageImage;
   faqs: Faq[];
 };
 
@@ -262,7 +343,7 @@ export const areas: AreaPage[] = [
     whatToSend: ["Middlesbrough postcode and property type", "Relevant survey or sample result", "Clear photographs and rough measurements", "Access details, occupants and the next trade or deadline"],
     nearbySlugs: ["asbestos-removal-thornaby", "asbestos-removal-guisborough-eston", "asbestos-removal-stockton-on-tees", "asbestos-removal-redcar"],
     serviceSlugs: ["asbestos-removal-middlesbrough-teesside", "asbestos-artex-removal-middlesbrough-teesside", "asbestos-floor-removal-middlesbrough-teesside", "asbestos-aib-removal-middlesbrough-teesside", "commercial-asbestos-removal-middlesbrough-teesside"],
-    primaryImage: { src: "/asbestos-removal-middlesbrough-textured-ceiling.webp", alt: "Textured ceiling photographed during an asbestos removal enquiry in Middlesbrough", name: "Asbestos Removal Middlesbrough – textured ceiling project photograph", caption: "Asbestos Removal Middlesbrough – a genuine textured-ceiling project photograph used to show the finish and area involved; survey or sample evidence confirms the material.", width: 1200, height: 1600 },
+    primaryImage: { src: "/asbestos-textured-coating-removal-middlesbrough-central-ts1.webp", alt: "Textured ceiling photographed during an asbestos removal enquiry in central Middlesbrough", name: "Asbestos textured-coating removal Middlesbrough – central TS1", caption: "Genuine Middlesbrough textured-ceiling project photography showing the finish and room area; survey or sample evidence confirms the material rather than its appearance.", width: 1200, height: 1600, locationName: "Central Middlesbrough", postalCode: "TS1", latitude: 54.5718937, longitude: -1.2393005 },
     faqs: [
       { question: "Which parts of Middlesbrough do you cover?", answer: "Coverage includes central Middlesbrough, Linthorpe, Acklam, Marton, Coulby Newham, Nunthorpe and surrounding districts, together with commercial and industrial premises across the town." },
       { question: "Can I send a Middlesbrough survey for pricing?", answer: "Yes. Send the relevant pages, postcode, photographs, approximate quantities and the work or deadline affected." },
@@ -291,7 +372,7 @@ export const areas: AreaPage[] = [
     whatToSend: ["Stockton-on-Tees postcode and building use", "Survey item or description of the suspected material", "Photographs, quantities and approximate dimensions", "Working hours, access limits and the date the next contractor needs"],
     nearbySlugs: ["asbestos-removal-thornaby", "asbestos-removal-billingham", "asbestos-removal-yarm-ingleby-barwick", "asbestos-removal-middlesbrough"],
     serviceSlugs: ["asbestos-removal-middlesbrough-teesside", "asbestos-floor-removal-middlesbrough-teesside", "asbestos-roof-removal-middlesbrough-teesside", "commercial-asbestos-removal-middlesbrough-teesside", "asbestos-surveys-testing-middlesbrough-teesside"],
-    primaryImage: { src: "/asbestos-removal-stockton-on-tees-loft-enquiry.webp", alt: "Loft space photographed during an asbestos removal enquiry in Stockton-on-Tees", name: "Asbestos Removal Stockton-on-Tees – loft project photograph", caption: "Asbestos Removal Stockton-on-Tees – a genuine loft project photograph showing the access and work area considered when an asbestos removal enquiry is assessed.", width: 1600, height: 1200 },
+    primaryImage: { src: "/asbestos-removal-stockton-on-tees-town-centre-ts18.webp", alt: "Loft space photographed during an asbestos removal enquiry in Stockton-on-Tees", name: "Asbestos removal Stockton-on-Tees – town centre TS18", caption: "Genuine Stockton-on-Tees loft-project photography showing the access and work area considered during an asbestos enquiry; appearance alone does not identify the material.", width: 1600, height: 1200, locationName: "Stockton-on-Tees town centre", postalCode: "TS18", latitude: 54.5609945, longitude: -1.3241009 },
     faqs: [
       { question: "Do you cover Norton and Eaglescliffe as well as Stockton?", answer: "Yes. Stockton-on-Tees coverage includes Norton, Eaglescliffe and surrounding areas, with Teesside-wide support where the site sits outside the town centre." },
       { question: "Can commercial work be planned around tenants?", answer: "Occupancy and tenant access can be built into the assessment. Send working hours, access restrictions and the project programme." },
@@ -320,7 +401,7 @@ export const areas: AreaPage[] = [
     whatToSend: ["Thornaby postcode and room or building use", "Survey wording or sample result where available", "Photographs and approximate area", "Occupancy, access and the work planned afterwards"],
     nearbySlugs: ["asbestos-removal-stockton-on-tees", "asbestos-removal-yarm-ingleby-barwick", "asbestos-removal-middlesbrough", "asbestos-removal-billingham"],
     serviceSlugs: ["asbestos-removal-middlesbrough-teesside", "asbestos-surveys-testing-middlesbrough-teesside", "commercial-asbestos-removal-middlesbrough-teesside", "asbestos-aib-removal-middlesbrough-teesside", "asbestos-floor-removal-middlesbrough-teesside"],
-    primaryImage: { src: "/asbestos-removal-thornaby-wall-material.webp", alt: "Interior wall area photographed during an asbestos removal project in Thornaby", name: "Asbestos Removal Thornaby – interior wall project photograph", caption: "Asbestos Removal Thornaby – a genuine interior project photograph showing the wall area and room context used when removal work is scoped.", width: 1600, height: 1200 },
+    primaryImage: { src: "/asbestos-removal-thornaby-mandale-ts17.webp", alt: "Interior wall area photographed during an asbestos removal project in Thornaby", name: "Asbestos removal Thornaby – Mandale TS17", caption: "Genuine Thornaby interior-project photography showing the wall area and room context used when removal work is scoped; the image is not used to identify a material by appearance.", width: 1600, height: 1200, locationName: "Thornaby and Mandale", postalCode: "TS17", latitude: 54.535257, longitude: -1.304718 },
     faqs: [
       { question: "Do you cover Thornaby and Teesdale?", answer: "Yes. Coverage includes Thornaby town centre, surrounding residential areas and commercial property around Teesdale." },
       { question: "What should a business send?", answer: "Send the relevant asbestos-register or survey items, site address, photographs, access arrangements, occupancy and programme." },
@@ -349,7 +430,7 @@ export const areas: AreaPage[] = [
     whatToSend: ["Billingham postcode and property or site type", "Survey page or sample result", "Photographs, measurements and material location", "Access route, operations, occupants and programme"],
     nearbySlugs: ["asbestos-removal-stockton-on-tees", "asbestos-removal-hartlepool", "asbestos-removal-middlesbrough", "asbestos-removal-thornaby"],
     serviceSlugs: ["asbestos-removal-middlesbrough-teesside", "asbestos-roof-removal-middlesbrough-teesside", "asbestos-floor-removal-middlesbrough-teesside", "asbestos-aib-removal-middlesbrough-teesside", "commercial-asbestos-removal-middlesbrough-teesside"],
-    primaryImage: { src: "/asbestos-floor-removal-billingham-project.webp", alt: "Floor area photographed during an asbestos removal project in Billingham", name: "Asbestos Removal Billingham – floor removal project photograph", caption: "Asbestos Removal Billingham – a genuine floor-removal project photograph. The photograph shows the work area; the project information confirms the asbestos scope.", width: 1200, height: 1600 },
+    primaryImage: { src: "/asbestos-floor-removal-billingham-town-centre-ts23.webp", alt: "Floor area photographed during an asbestos removal project in Billingham", name: "Asbestos floor removal Billingham – town centre TS23", caption: "Genuine Billingham floor-removal project photography showing the work area; the survey or project information confirms the asbestos scope.", width: 1200, height: 1600, locationName: "Billingham town centre", postalCode: "TS23", latitude: 54.6095899, longitude: -1.2850231 },
     faqs: [
       { question: "Do you cover industrial premises in Billingham?", answer: "Yes. Commercial and industrial enquiries are assessed using the survey scope, building use, access, occupancy and project programme." },
       { question: "Can you remove a garage roof at a Billingham home?", answer: "Yes. Send roof photographs, approximate dimensions, access and whether the sheets or the complete structure need removing." },
@@ -378,7 +459,7 @@ export const areas: AreaPage[] = [
     whatToSend: ["Redcar or Cleveland postcode", "Relevant survey or testing information", "Clear photos, height and measurements", "Access, occupancy and the following trade or deadline"],
     nearbySlugs: ["asbestos-removal-guisborough-eston", "asbestos-removal-middlesbrough", "asbestos-removal-stockton-on-tees", "asbestos-removal-hartlepool"],
     serviceSlugs: ["asbestos-removal-middlesbrough-teesside", "asbestos-roof-removal-middlesbrough-teesside", "asbestos-artex-removal-middlesbrough-teesside", "commercial-asbestos-removal-middlesbrough-teesside", "asbestos-surveys-testing-middlesbrough-teesside"],
-    primaryImage: { src: "/asbestos-textured-coating-removal-redcar-cleveland.webp", alt: "Textured ceiling photographed for an asbestos removal enquiry in Redcar and Cleveland", name: "Asbestos Removal Redcar & Cleveland – textured ceiling project photograph", caption: "Asbestos Removal Redcar & Cleveland – a genuine textured-ceiling project photograph from the wider Cleveland coast coverage area; testing confirms whether the coating contains asbestos.", width: 1600, height: 1200 },
+    primaryImage: { src: "/asbestos-textured-coating-removal-redcar-coatham-ts10.webp", alt: "Textured ceiling photographed for an asbestos removal enquiry in Redcar and Cleveland", name: "Asbestos textured-coating removal Redcar – Coatham TS10", caption: "Genuine textured-ceiling project photography from the wider Redcar and Cleveland coverage area; testing confirms whether the coating contains asbestos.", width: 1600, height: 1200, locationName: "Redcar and Coatham", postalCode: "TS10", latitude: 54.6066012, longitude: -1.0694791 },
     faqs: [
       { question: "Do you cover Marske and Saltburn?", answer: "Yes. Coverage extends from Redcar and Dormanstown to Marske, Saltburn and surrounding Redcar and Cleveland areas." },
       { question: "Can roof sheets be identified from photos?", answer: "Photos help assess layout and condition, but they do not reliably confirm whether a sheet contains asbestos. Survey or sampling information may be needed." },
@@ -407,7 +488,7 @@ export const areas: AreaPage[] = [
     whatToSend: ["Yarm, Eaglescliffe or Ingleby Barwick postcode", "Approximate property age and alteration history", "Photographs and planned disturbance", "Survey wording, measurements and renovation date"],
     nearbySlugs: ["asbestos-removal-stockton-on-tees", "asbestos-removal-thornaby", "asbestos-removal-darlington-county-durham", "asbestos-removal-middlesbrough"],
     serviceSlugs: ["asbestos-surveys-testing-middlesbrough-teesside", "asbestos-artex-removal-middlesbrough-teesside", "asbestos-floor-removal-middlesbrough-teesside", "asbestos-roof-removal-middlesbrough-teesside", "asbestos-removal-middlesbrough-teesside"],
-    primaryImage: { src: "/asbestos-artex-removal-middlesbrough-teesside-textured-ceiling.webp", alt: "Textured ceiling in a Teesside property shown as relevant asbestos removal project context", name: "Asbestos Removal Yarm & Ingleby Barwick – Teesside textured ceiling reference", caption: "Asbestos Removal Yarm & Ingleby Barwick – genuine Teesside project photography showing a textured ceiling. It is used as relevant service context and is not presented as a completed job at a specific Yarm or Ingleby Barwick address.", width: 1200, height: 1600 },
+    primaryImage: { src: "/asbestos-textured-coating-removal-yarm-high-street-ts15.webp", alt: "Textured ceiling in a Teesside property shown as removal context for Yarm and Ingleby Barwick", name: "Asbestos textured-coating removal Yarm – High Street TS15 context", caption: "Genuine Teesside textured-ceiling photography used as relevant service context for Yarm and Ingleby Barwick, not as a claim about a completed job at a specific address.", width: 1200, height: 1600, locationName: "Yarm High Street and Ingleby Barwick", postalCode: "TS15", latitude: 54.4873005, longitude: -1.3351736 },
     faqs: [
       { question: "Can newer homes still need an asbestos check?", answer: "The building date, alterations and specific material all matter. Do not assume from the town or estate alone; explain where the material is and what work is planned." },
       { question: "Do you cover Eaglescliffe?", answer: "Yes. Yarm, Eaglescliffe, Ingleby Barwick and nearby areas are covered as part of the wider Teesside service area." },
@@ -436,7 +517,7 @@ export const areas: AreaPage[] = [
     whatToSend: ["Guisborough, Eston or South Teesside postcode", "Survey or sample result where available", "Photos, dimensions, height and access", "Property use and the next stage of work"],
     nearbySlugs: ["asbestos-removal-redcar", "asbestos-removal-middlesbrough", "asbestos-removal-yarm-ingleby-barwick", "asbestos-removal-thornaby"],
     serviceSlugs: ["asbestos-removal-middlesbrough-teesside", "asbestos-roof-removal-middlesbrough-teesside", "asbestos-artex-removal-middlesbrough-teesside", "asbestos-aib-removal-middlesbrough-teesside", "asbestos-surveys-testing-middlesbrough-teesside"],
-    primaryImage: { src: "/asbestos-cement-roof-north-east-commercial-building.webp", alt: "Corrugated commercial roof on a North East building shown as asbestos roof removal project context", name: "Asbestos Removal Guisborough & Eston – North East commercial roof reference", caption: "Asbestos Removal Guisborough & Eston – genuine North East commercial-roof photography used to show roof scale, height and sheet layout; it is not presented as a completed job at a specific local address.", width: 1600, height: 1200 },
+    primaryImage: { src: "/asbestos-roof-removal-guisborough-westgate-ts14.webp", alt: "Corrugated commercial roof shown as asbestos roof-removal context for Guisborough and Eston", name: "Asbestos roof removal Guisborough – Westgate TS14 context", caption: "Genuine North East commercial-roof photography used to show roof scale, height and sheet layout for Guisborough and Eston enquiries; it is not presented as a completed job at a specific address.", width: 1600, height: 1200, locationName: "Guisborough and Westgate", postalCode: "TS14", latitude: 54.5324692, longitude: -1.0627815 },
     faqs: [
       { question: "Do you cover Eston and Normanby?", answer: "Yes. Coverage includes Guisborough, Eston, Normanby, Nunthorpe and nearby South Teesside areas." },
       { question: "Can access affect the quotation?", answer: "Yes. Height, parking, loading, distance from the work area and whether the building is occupied can all affect planning and cost." },
@@ -465,7 +546,7 @@ export const areas: AreaPage[] = [
     whatToSend: ["Hartlepool postcode and building type", "Survey item or suspected-material description", "Photographs, quantities, roof height or room size", "Access, occupancy, operations and deadline"],
     nearbySlugs: ["asbestos-removal-billingham", "asbestos-removal-stockton-on-tees", "asbestos-removal-redcar", "asbestos-removal-middlesbrough"],
     serviceSlugs: ["asbestos-removal-middlesbrough-teesside", "asbestos-roof-removal-middlesbrough-teesside", "commercial-asbestos-removal-middlesbrough-teesside", "asbestos-artex-removal-middlesbrough-teesside", "asbestos-aib-removal-middlesbrough-teesside"],
-    primaryImage: { src: "/asbestos-floor-covering-removal-hartlepool.webp", alt: "Room after asbestos floor covering removal in Hartlepool", name: "Asbestos Removal Hartlepool – floor covering removal project", caption: "Asbestos Removal Hartlepool – a genuine Hartlepool floor-covering removal photograph showing the cleared room and exposed timber floor after the agreed removal work.", width: 1600, height: 1200 },
+    primaryImage: { src: "/asbestos-floor-covering-removal-hartlepool-headland-ts24.webp", alt: "Room after asbestos floor-covering removal in Hartlepool", name: "Asbestos floor-covering removal Hartlepool – Headland TS24", caption: "Genuine Hartlepool floor-covering removal photography showing the cleared room and exposed timber floor after the agreed removal work.", width: 1600, height: 1200, locationName: "Hartlepool and the Headland", postalCode: "TS24", latitude: 54.696985, longitude: -1.2113345 },
     faqs: [
       { question: "Do you cover Hartlepool as part of Teesside?", answer: "Yes. Hartlepool enquiries are covered alongside Middlesbrough, Stockton, Billingham, Redcar and the wider Teesside area." },
       { question: "Can you assess a workshop roof?", answer: "Yes. Send roof size, height, photographs, building use, access and the planned replacement or demolition programme." },
@@ -494,7 +575,7 @@ export const areas: AreaPage[] = [
     whatToSend: ["Darlington or County Durham postcode", "Building use and exact material location", "Survey pages, photos and rough quantities", "Access, occupancy and the next contractor's date"],
     nearbySlugs: ["asbestos-removal-yarm-ingleby-barwick", "asbestos-removal-stockton-on-tees", "asbestos-removal-middlesbrough", "asbestos-removal-guisborough-eston"],
     serviceSlugs: ["asbestos-removal-middlesbrough-teesside", "asbestos-surveys-testing-middlesbrough-teesside", "asbestos-floor-removal-middlesbrough-teesside", "asbestos-roof-removal-middlesbrough-teesside", "commercial-asbestos-removal-middlesbrough-teesside"],
-    primaryImage: { src: "/asbestos-floor-removal-middlesbrough-teesside-bathroom.webp", alt: "Bathroom floor in a North East property shown as relevant asbestos floor removal project context", name: "Asbestos Removal Darlington & County Durham – North East floor project reference", caption: "Asbestos Removal Darlington & County Durham – genuine North East bathroom and flooring project photography used as relevant service context, not as a claim about a specific Darlington address.", width: 1200, height: 1600 },
+    primaryImage: { src: "/asbestos-floor-removal-darlington-north-road-dl1.webp", alt: "Bathroom floor shown as asbestos floor-removal project context for Darlington and County Durham", name: "Asbestos floor removal Darlington – North Road DL1 context", caption: "Genuine North East bathroom and flooring project photography used as relevant service context for Darlington and County Durham, not as a claim about a completed job at a specific address.", width: 1200, height: 1600, locationName: "Darlington and North Road", postalCode: "DL1", latitude: 54.5301377, longitude: -1.5387955 },
     faqs: [
       { question: "Do you travel from Teesside to Darlington?", answer: "Yes. Darlington and nearby County Durham are included in the wider service area." },
       { question: "Can you quote work in an occupied shop or office?", answer: "Yes. Provide working hours, access, occupancy, survey items and the required programme so the assessment reflects the live building." },

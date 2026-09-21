@@ -45,6 +45,7 @@ export function Footer() {
           <Link href="/asbestos-surveys-testing-middlesbrough-teesside">Surveys & testing</Link>
           <Link href="/asbestos-artex-removal-middlesbrough-teesside">Artex removal</Link>
           <Link href="/asbestos-roof-removal-middlesbrough-teesside">Roof removal</Link>
+          <Link href="/asbestos-pipe-insulation-removal-middlesbrough-teesside">Pipe insulation removal</Link>
         </div>
         <div>
           <h3>Main areas</h3>

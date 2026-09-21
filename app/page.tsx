@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { Header, Footer, CallBand } from "@/components/SiteChrome";
 import { QuoteForm } from "@/components/QuoteForm";
@@ -40,8 +41,11 @@ function jsonLd() {
         "@type": "Organization",
         "@id": `${base}/#business`,
         name: site.name,
+        alternateName: ["Asbestos Removal Teesside", "Asbestos Removal Middlesbrough"],
         url: base,
         telephone: site.phoneHref,
+        logo: { "@type": "ImageObject", url: `${base}/favicon.svg`, width: 64, height: 64 },
+        image: { "@id": `${base}/#primaryimage` },
         description:
           "Asbestos removal, surveys, testing and lawful disposal enquiries for homes, commercial buildings and industrial premises across Middlesbrough and Teesside.",
         areaServed: [
@@ -86,7 +90,16 @@ function jsonLd() {
         url: `${base}/asbestos-removal-middlesbrough-teesside-commercial-roof.webp`,
         contentUrl: `${base}/asbestos-removal-middlesbrough-teesside-commercial-roof.webp`,
         caption: "Industrial roof lining photographed in connection with a Middlesbrough and Teesside asbestos removal enquiry",
+        name: "Asbestos removal Middlesbrough and Teesside – commercial project context",
+        width: 1600,
+        height: 1200,
         representativeOfPage: true,
+        contentLocation: {
+          "@type": "Place",
+          name: "Middlesbrough and Teesside",
+          address: { "@type": "PostalAddress", addressLocality: "Middlesbrough", postalCode: "TS2", addressCountry: "GB" },
+          geo: { "@type": "GeoCoordinates", latitude: 54.5847, longitude: -1.2397 },
+        },
       },
       {
         "@type": "Service",
@@ -95,6 +108,7 @@ function jsonLd() {
         serviceType: services.map((item) => item.navTitle),
         provider: { "@id": `${base}/#business` },
         areaServed: "Middlesbrough and Teesside",
+        image: { "@id": `${base}/#primaryimage` },
         url: base,
       },
       {
@@ -163,9 +177,9 @@ export default function Home() {
               <p>Choose the closest service, or call and describe what has been found.</p>
             </div>
             <details className="content-disclosure dark-disclosure">
-              <summary><span>View all asbestos services</span><b>7 service pages</b></summary>
+              <summary><span>View all asbestos services</span><b>{services.length} service pages</b></summary>
               <div className="service-grid">
-                {services.slice(0, 7).map((service, index) => (
+                {services.map((service, index) => (
                   <Link className={`service-card service-card-${index + 1}`} href={`/${service.slug}`} key={service.slug}>
                     <span>0{index + 1}</span>
                     <h3>{service.navTitle}</h3>

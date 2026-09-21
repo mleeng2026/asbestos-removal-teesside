@@ -4,7 +4,7 @@ import { areas, services, site } from "@/lib/site-data";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const updated = new Date("2026-09-17T00:00:00Z");
+  const updated = new Date("2026-09-21T00:00:00Z");
   return [
     {
       url: site.url,
@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: updated,
       changeFrequency: "monthly" as const,
       priority: 0.85,
-      images: [`${site.url}${page.image?.src ?? "/asbestos-removal-middlesbrough-teesside-commercial-roof.webp"}`],
+      images: [`${site.url}${page.image.src}`],
     })),
     ...areas.map((page) => ({
       url: `${site.url}/${page.slug}`,

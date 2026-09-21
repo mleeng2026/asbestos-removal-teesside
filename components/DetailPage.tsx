@@ -1,27 +1,30 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header, Footer, CallBand } from "@/components/SiteChrome";
 import { QuoteForm } from "@/components/QuoteForm";
 import { areaDepth, areas, services, site, type AreaPage, type ServicePage } from "@/lib/site-data";
+import { areaEditorial } from "@/lib/area-editorial";
+import { serviceEditorial, supplementalServiceFaqs } from "@/lib/service-editorial";
 
 function faqsFor(page: ServicePage | AreaPage) {
-  return page.faqs;
+  return page.kind === "service" ? [...page.faqs, ...(supplementalServiceFaqs[page.slug] ?? [])] : page.faqs;
 }
 
 export function metadataForSlug(slug: string): Metadata {
   const page = [...services, ...areas].find((item) => item.slug === slug);
   if (!page) return {};
   const description = page.kind === "area" ? page.metaDescription : (page.summary.length > 158 ? `${page.summary.slice(0, 155)}…` : page.summary);
-  const areaImage = page.kind === "area" ? page.primaryImage : undefined;
-  const image = areaImage ? `${site.url}${areaImage.src}` : undefined;
+  const pageImage = page.kind === "area" ? page.primaryImage : page.image;
+  const image = `${site.url}${pageImage.src}`;
   return {
     title: page.kind === "area" ? { absolute: `${page.title} | Free Quote` } : `${page.title} | Free Quote`,
     description,
     alternates: { canonical: `${site.url}/${page.slug}` },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
-    openGraph: { title: page.title, description, url: `${site.url}/${page.slug}`, type: "website", ...(image && areaImage ? { images: [{ url: image, alt: areaImage.alt, width: areaImage.width, height: areaImage.height }] } : {}) },
-    twitter: { card: "summary_large_image", title: page.title, description, ...(image ? { images: [image] } : {}) },
+    openGraph: { title: page.title, description, url: `${site.url}/${page.slug}`, type: "website", images: [{ url: image, alt: pageImage.alt, width: pageImage.width, height: pageImage.height }] },
+    twitter: { card: "summary_large_image", title: page.title, description, images: [{ url: image, alt: pageImage.alt }] },
   };
 }
 
@@ -29,7 +32,7 @@ function schema(page: ServicePage | AreaPage) {
   const url = `${site.url}/${page.slug}`;
   const serviceName = page.kind === "service" ? page.title : `Asbestos Removal ${page.navTitle}`;
   const faqs = faqsFor(page);
-  const image = page.kind === "area" ? page.primaryImage : undefined;
+  const image = page.kind === "area" ? page.primaryImage : page.image;
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -47,7 +50,7 @@ function schema(page: ServicePage | AreaPage) {
         breadcrumb: { "@id": `${url}#breadcrumb` },
         hasPart: { "@id": `${url}#faq` },
         inLanguage: "en-GB",
-        ...(image ? { primaryImageOfPage: { "@id": `${url}#primaryimage` } } : {}),
+        primaryImageOfPage: { "@id": `${url}#primaryimage` },
       },
       {
         "@type": "Service",
@@ -58,10 +61,10 @@ function schema(page: ServicePage | AreaPage) {
         areaServed: page.kind === "area" ? page.schemaAreas.map((name) => ({ "@type": "Place", name, containedInPlace: { "@type": "AdministrativeArea", name: "Teesside and the North East" } })) : "Middlesbrough and Teesside",
         mainEntityOfPage: { "@id": `${url}#webpage` },
         isRelatedTo: { "@id": `${site.url}/#service` },
-        ...(image ? { image: { "@id": `${url}#primaryimage` } } : {}),
+        image: { "@id": `${url}#primaryimage` },
         url,
       },
-      ...(image ? [{
+      {
         "@type": "ImageObject",
         "@id": `${url}#primaryimage`,
         url: `${site.url}${image.src}`,
@@ -71,7 +74,13 @@ function schema(page: ServicePage | AreaPage) {
         width: image.width,
         height: image.height,
         representativeOfPage: true,
-      }] : []),
+        contentLocation: {
+          "@type": "Place",
+          name: image.locationName,
+          address: { "@type": "PostalAddress", addressLocality: image.locationName, postalCode: image.postalCode, addressCountry: "GB" },
+          geo: { "@type": "GeoCoordinates", latitude: image.latitude, longitude: image.longitude },
+        },
+      },
       {
         "@type": "BreadcrumbList",
         "@id": `${url}#breadcrumb`,
@@ -95,6 +104,8 @@ export function DetailPage({ slug }: { slug: string }) {
   if (!page) notFound();
   const isService = page.kind === "service";
   const localDepth = !isService ? areaDepth[page.slug] : undefined;
+  const localEditorial = !isService ? areaEditorial[page.slug] : undefined;
+  const serviceDepth = isService ? serviceEditorial[page.slug] : undefined;
   const pageFaqs = faqsFor(page);
   const relatedServices = isService
     ? services.filter((item) => item.slug !== page.slug).slice(0, 4)
@@ -142,10 +153,12 @@ export function DetailPage({ slug }: { slug: string }) {
           <div className="shell two-col">
             <div>
               <p className="eyebrow">{isService ? "Start with the live job" : "Local buyer context"}</p>
-              <h2>{isService ? "A quote needs the real scope, not a guessed material." : `Asbestos work across ${page.navTitle}.`}</h2>
+              <h2>{isService ? serviceDepth?.decisionHeading ?? "A quote needs the real scope, not a guessed material." : localEditorial?.decisionHeading ?? `Asbestos work across ${page.navTitle}.`}</h2>
             </div>
             <div className="prose">
               <p>{isService ? (page as ServicePage).intro : (page as AreaPage).local}</p>
+              {isService && serviceDepth && <p>{serviceDepth.decisionIntro}</p>}
+              {!isService && localEditorial && <p>{localEditorial.decisionIntro}</p>}
               <p>Call <a href={`tel:${site.phoneHref}`}>{site.phone}</a> or use the enquiry form with the postcode, photographs and any paperwork you already have.</p>
             </div>
           </div>
@@ -158,6 +171,8 @@ export function DetailPage({ slug }: { slug: string }) {
                 <img
                   src={(page as ServicePage).image!.src}
                   alt={(page as ServicePage).image!.alt}
+                  width={(page as ServicePage).image!.width}
+                  height={(page as ServicePage).image!.height}
                 />
                 <figcaption>
                   <span>Real North East project photography</span>
@@ -225,6 +240,17 @@ export function DetailPage({ slug }: { slug: string }) {
                   <p>{(page as AreaPage).route}</p>
                 </article>
               </div>
+              {localEditorial && (
+                <section className="area-editorial" aria-label={`${page.navTitle} asbestos removal buyer guide`}>
+                  {localEditorial.sections.map((section, index) => (
+                    <article className={`area-editorial-block area-editorial-block-${index + 1}`} key={section.heading}>
+                      <p className="eyebrow">{section.eyebrow}</p>
+                      <h2>{section.heading}</h2>
+                      {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    </article>
+                  ))}
+                </section>
+              )}
               {localDepth && (
                 <section className="local-depth" aria-labelledby="local-depth-heading">
                   <div className="section-heading centered-heading">
@@ -246,14 +272,14 @@ export function DetailPage({ slug }: { slug: string }) {
                 </section>
               )}
               <div className="section-heading local-service-heading centered-heading">
-                <p className="eyebrow">Removal, surveys and testing</p>
-                <h2>Asbestos removal services available across {page.navTitle}.</h2>
+                <p className="eyebrow">Choose the route that fits this job</p>
+                <h2>Useful asbestos services for buyers in {page.navTitle}.</h2>
               </div>
               <div className="local-service-grid">
-                {services.slice(0, 7).map((item) => (
+                {localEditorial?.serviceAngles.map((item) => (
                   <Link href={`/${item.slug}`} key={item.slug}>
-                    <h3>{item.title}</h3>
-                    <p>{item.summary}</p>
+                    <h3>{item.heading}</h3>
+                    <p>{item.copy}</p>
                     <span>View service →</span>
                   </Link>
                 ))}
@@ -266,17 +292,30 @@ export function DetailPage({ slug }: { slug: string }) {
         )}
 
         {isService && (
-          <section className="section context-section">
-            <div className="shell two-col">
-              <div>
-                <p className="eyebrow">Property and project context</p>
-                <h2>Scope the material around the building that contains it.</h2>
-                <p>Height, access, occupancy, condition, amount and the next trade all change how a removal project is assessed.</p>
+          <section className="section service-depth-section">
+            <div className="shell">
+              {serviceDepth && (
+                <div className="area-editorial" aria-label={`${page.navTitle} buyer guide`}>
+                  {serviceDepth.sections.map((section, index) => (
+                    <article className={`area-editorial-block area-editorial-block-${index + 1}`} key={section.heading}>
+                      <p className="eyebrow">{section.eyebrow}</p>
+                      <h2>{section.heading}</h2>
+                      {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    </article>
+                  ))}
+                </div>
+              )}
+              <div className="two-col service-context-grid">
+                <div>
+                  <p className="eyebrow">Property and project context</p>
+                  <h2>Scope the material around the building that contains it.</h2>
+                  <p>Height, access, occupancy, condition, amount and the next trade all change how a removal project is assessed.</p>
+                </div>
+                <ul className="context-list">
+                  {(page as ServicePage).contexts.map((item) => <li key={item}>{item}</li>)}
+                </ul>
+                <p className="hub-return"><Link href="/services">Compare every asbestos removal, survey and testing service →</Link></p>
               </div>
-              <ul className="context-list">
-                {(page as ServicePage).contexts.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-              <p className="hub-return"><Link href="/services">Compare every asbestos removal, survey and testing service →</Link></p>
             </div>
           </section>
         )}
@@ -296,13 +335,17 @@ export function DetailPage({ slug }: { slug: string }) {
 
         <section className="section related-section">
           <div className="shell">
-            <div className="section-heading centered-heading"><p className="eyebrow">Keep moving</p><h2>{isService ? "Related asbestos services" : `Relevant asbestos services in ${page.navTitle}`}</h2></div>
-            <div className="related-grid">
-              {relatedServices.map((item) => <Link key={item.slug} href={`/${item.slug}`}><b>{item.navTitle}</b><span>{item.summary}</span><em>View service →</em></Link>)}
-            </div>
+            {isService && (
+              <>
+                <div className="section-heading centered-heading"><p className="eyebrow">Keep moving</p><h2>Related asbestos services</h2></div>
+                <div className="related-grid">
+                  {relatedServices.map((item) => <Link key={item.slug} href={`/${item.slug}`}><b>{item.navTitle}</b><span>{item.summary}</span><em>View service →</em></Link>)}
+                </div>
+              </>
+            )}
             <div className="section-heading second-related centered-heading"><p className="eyebrow">{isService ? "Service coverage" : "Nearby coverage"}</p><h2>{isService ? "Asbestos removal across Teesside" : "Other local areas we cover"}</h2></div>
             <div className="related-grid">
-              {relatedAreas.map((item) => <Link key={item.slug} href={`/${item.slug}`}><b>{item.navTitle}</b><span>{item.summary}</span><em>View local page →</em></Link>)}
+              {relatedAreas.map((item) => <Link key={item.slug} href={`/${item.slug}`}><b>{item.navTitle}</b>{isService && <span>{item.summary}</span>}<em>View local page →</em></Link>)}
             </div>
           </div>
         </section>
@@ -311,8 +354,8 @@ export function DetailPage({ slug }: { slug: string }) {
           <div className="shell quote-layout">
             <div className="quote-copy">
               <p className="eyebrow light">Free quotation</p>
-              <h2>Send the job details you already have.</h2>
-              <p>Survey or no survey, tell us the location, material or suspected material, approximate amount and project timing.</p>
+              <h2>{!isService && localEditorial ? localEditorial.quoteHeading : serviceDepth?.quoteHeading ?? "Send the job details you already have."}</h2>
+              <p>{!isService && localEditorial ? localEditorial.quoteCopy : serviceDepth?.quoteCopy ?? "Survey or no survey, tell us the location, material or suspected material, approximate amount and project timing."}</p>
               <a href={`tel:${site.phoneHref}`}>{site.phone}</a>
             </div>
             <QuoteForm />

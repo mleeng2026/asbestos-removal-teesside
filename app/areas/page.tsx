@@ -36,7 +36,7 @@ export default function AreasHub() {
             <p className="eyebrow light">Middlesbrough · Teesside · nearby North East</p>
             <h1>Local Asbestos Removal Areas</h1>
             <p>Choose the page closest to the property. Each one covers real buyer situations, relevant streets and employment areas, access questions, confirmed project evidence and the nearest useful service links.</p>
-            <div className="hero-actions"><a className="button primary" href={`tel:${site.phoneHref}`}>Call {site.phone}</a><a className="button ghost" href="/#quote">Free quote</a></div>
+            <div className="hero-actions"><a className="button primary" href={`tel:${site.phoneHref}`}>Call {site.phone}</a><Link className="button ghost" href="/#quote">Free quote</Link></div>
           </div>
         </section>
         <CallBand />
