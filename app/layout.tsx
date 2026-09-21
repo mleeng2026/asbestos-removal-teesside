@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     "Asbestos removal, surveys and testing across Middlesbrough and Teesside. Domestic, commercial and industrial enquiries. Call 01642 921035.",
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
+  verification: {
+    google: "Gobd3iF3BOqNKPOrn2WZtAsaMJtovyjP9zZQ0I-8sUU",
+  },
   openGraph: {
     title: "Asbestos Removal Middlesbrough & Teesside",
     description:
