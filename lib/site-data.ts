@@ -3,7 +3,7 @@ export const site = {
   shortName: "ARM Teesside",
   phone: "01642 921035",
   phoneHref: "+441642921035",
-  url: "https://asbestos-removal-middlesbrough-teesside.open-rhino-5981.chatgpt.site",
+  url: "https://asbestosremovalteesside.co.uk",
   formEndpoint: "https://formspree.io/f/xppaoyqd",
 };
 
