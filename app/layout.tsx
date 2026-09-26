@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
   verification: {
-    google: "Gobd3iF3BOqNKPOrn2WZtAsaMJtovyjP9zZQ0I-8sUU",
+    google: "imt6XXshRJie9K0A7rfEdJCZVIolbzUfkbAi0yLz-VE",
   },
   openGraph: {
     title: "Asbestos Removal Middlesbrough & Teesside",
