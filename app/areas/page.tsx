@@ -6,14 +6,14 @@ import { areas, site } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: { absolute: "Asbestos Removal Areas | Middlesbrough & Teesside" },
   description: "Find local asbestos removal pages for Middlesbrough, Stockton, Thornaby, Billingham, Redcar, Yarm, Guisborough, Hartlepool and Darlington.",
-  alternates: { canonical: `${site.url}/areas` },
+  alternates: { canonical: `${site.url}/areas/` },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
-  openGraph: { title: "Asbestos Removal Areas | Middlesbrough & Teesside", description: "Find local asbestos removal pages for Middlesbrough, Stockton, Thornaby, Billingham, Redcar, Yarm, Guisborough, Hartlepool and Darlington.", url: `${site.url}/areas`, type: "website", images: [{ url: `${site.url}/asbestos-removal-areas-middlesbrough-teesside-teesamp-ts2.webp`, width: 1600, height: 1200, alt: "Commercial project context for local asbestos removal coverage across Middlesbrough and Teesside" }] },
+  openGraph: { title: "Asbestos Removal Areas | Middlesbrough & Teesside", description: "Find local asbestos removal pages for Middlesbrough, Stockton, Thornaby, Billingham, Redcar, Yarm, Guisborough, Hartlepool and Darlington.", url: `${site.url}/areas/`, type: "website", images: [{ url: `${site.url}/asbestos-removal-areas-middlesbrough-teesside-teesamp-ts2.webp`, width: 1600, height: 1200, alt: "Commercial project context for local asbestos removal coverage across Middlesbrough and Teesside" }] },
   twitter: { card: "summary_large_image", title: "Asbestos Removal Areas | Middlesbrough & Teesside", description: "Find the closest local asbestos removal coverage page across Teesside and nearby North East areas.", images: [`${site.url}/asbestos-removal-areas-middlesbrough-teesside-teesamp-ts2.webp`] },
 };
 
 function jsonLd() {
-  const url = `${site.url}/areas`;
+  const url = `${site.url}/areas/`;
   return {
     "@context": "https://schema.org",
     "@graph": [
