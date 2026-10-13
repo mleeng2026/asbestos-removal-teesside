@@ -6,14 +6,14 @@ import { services, site } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: { absolute: "Asbestos Services | Middlesbrough & Teesside" },
   description: "Compare asbestos removal, surveys, testing, Artex, AIB, flooring, roof and commercial asbestos services across Middlesbrough and Teesside.",
-  alternates: { canonical: `${site.url}/services` },
+  alternates: { canonical: `${site.url}/services/` },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
-  openGraph: { title: "Asbestos Services | Middlesbrough & Teesside", description: "Compare asbestos removal, surveys, testing, Artex, AIB, flooring, roof and commercial asbestos services across Middlesbrough and Teesside.", url: `${site.url}/services`, type: "website", images: [{ url: `${site.url}/asbestos-removal-services-middlesbrough-teesside-riverside-park-ts2.webp`, width: 1600, height: 1200, alt: "Commercial roof project context for asbestos removal services across Middlesbrough and Teesside" }] },
+  openGraph: { title: "Asbestos Services | Middlesbrough & Teesside", description: "Compare asbestos removal, surveys, testing, Artex, AIB, flooring, roof and commercial asbestos services across Middlesbrough and Teesside.", url: `${site.url}/services/`, type: "website", images: [{ url: `${site.url}/asbestos-removal-services-middlesbrough-teesside-riverside-park-ts2.webp`, width: 1600, height: 1200, alt: "Commercial roof project context for asbestos removal services across Middlesbrough and Teesside" }] },
   twitter: { card: "summary_large_image", title: "Asbestos Services | Middlesbrough & Teesside", description: "Compare asbestos removal, survey, testing and commercial services across Teesside.", images: [`${site.url}/asbestos-removal-services-middlesbrough-teesside-riverside-park-ts2.webp`] },
 };
 
 function jsonLd() {
-  const url = `${site.url}/services`;
+  const url = `${site.url}/services/`;
   return {
     "@context": "https://schema.org",
     "@graph": [
