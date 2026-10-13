@@ -21,9 +21,9 @@ export function metadataForSlug(slug: string): Metadata {
   return {
     title: page.kind === "area" ? { absolute: `${page.title} | Free Quote` } : `${page.title} | Free Quote`,
     description,
-    alternates: { canonical: `${site.url}/${page.slug}` },
+    alternates: { canonical: `${site.url}/${page.slug}/` },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
-    openGraph: { title: page.title, description, url: `${site.url}/${page.slug}`, type: "website", images: [{ url: image, alt: pageImage.alt, width: pageImage.width, height: pageImage.height }] },
+    openGraph: { title: page.title, description, url: `${site.url}/${page.slug}/`, type: "website", images: [{ url: image, alt: pageImage.alt, width: pageImage.width, height: pageImage.height }] },
     twitter: { card: "summary_large_image", title: page.title, description, images: [{ url: image, alt: pageImage.alt }] },
   };
 }
