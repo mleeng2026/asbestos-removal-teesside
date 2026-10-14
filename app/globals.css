@@ -373,6 +373,50 @@ figure { margin: 0; }
   .footer-base { flex-direction: column; }
 }
 
+
+/* Consistent centred headings and high-visibility telephone calls across the site. */
+main h1, main h2, main h3, .site-footer h2, .site-footer h3 {
+  text-align: center;
+  overflow-wrap: break-word;
+}
+.section-heading, .split-heading { margin-inline: auto; }
+.section-heading .eyebrow, .split-heading .eyebrow,
+.detail-hero .eyebrow, .quote-copy .eyebrow { text-align: center; }
+.detail-hero-grid > div:first-child { text-align: center; }
+.detail-hero h1, .detail-answer { margin-inline: auto; }
+.detail-hero .hero-actions { justify-content: center; }
+.header-call {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 48px;
+  border: 2px solid #ffd15c;
+  border-radius: 4px;
+  background: #ffd15c;
+  color: #071d2b;
+  font-weight: 900;
+  white-space: nowrap;
+  box-shadow: 0 0 0 2px rgba(7,29,43,.3);
+}
+.header-call:hover, .header-call:focus-visible { background: #fff; border-color: #fff; color: #071d2b; }
+.header-call:focus-visible, a[href^="tel:"]:focus-visible { outline: 3px solid #ffd15c; outline-offset: 3px; }
+.hero-actions .button.primary, .call-band a[href^="tel:"] {
+  background: #ffd15c;
+  color: #071d2b;
+  border: 2px solid #ffd15c;
+  border-radius: 4px;
+  font-weight: 900;
+}
+.call-band a[href^="tel:"] { background: #071d2b; color: #fff; border-color: #071d2b; }
+@media (max-width: 640px) {
+  .header-inner { grid-template-columns: minmax(0,1fr) auto; }
+  .brand { min-width: 0; }
+  .header-call { min-height: 48px; padding: 9px 12px; font-size: 13px; }
+  .hero-actions .button.primary { width: 100%; }
+  .detail-hero-grid > div:first-child { min-width: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; }
