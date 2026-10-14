@@ -22,7 +22,7 @@ export function Header() {
             <Link href="/#questions">Questions</Link>
             <Link href="/#quote">Free quote</Link>
           </nav>
-          <a className="header-call" href={`tel:${site.phoneHref}`}>01642 921035</a>
+          <a className="header-call" href={`tel:${site.phoneHref}`}>Call {site.phone}</a>
         </div>
       </header>
     </>
