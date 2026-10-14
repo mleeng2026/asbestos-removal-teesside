@@ -44,7 +44,7 @@ img { max-width: 100%; }
 
 .hero { position: relative; min-height: 700px; display: flex; align-items: center; overflow: hidden; background: var(--ink); color: var(--white); }
 .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.hero-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3,20,31,.92) 0%, rgba(3,20,31,.80) 48%, rgba(3,20,31,.24) 100%), linear-gradient(0deg, rgba(3,20,31,.42), transparent 55%); }
+.hero-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3,20,31,.76) 0%, rgba(3,20,31,.58) 48%, rgba(3,20,31,.20) 100%), linear-gradient(0deg, rgba(3,20,31,.42), transparent 55%); }
 .hero-grid { position: relative; z-index: 2; display: flex; justify-content: center; padding-block: 88px; }
 .hero-copy { width: min(980px, 100%); text-align: center; }
 .eyebrow { margin: 0 0 18px; color: #9f6111; font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
@@ -77,7 +77,7 @@ h1,h2,h3 { color: var(--ink); font-family: Georgia, "Times New Roman", serif; li
 .prose a { font-weight: 900; }
 .services-section {
   background-color: var(--ink);
-  background-image: linear-gradient(rgba(7,29,43,.89), rgba(7,29,43,.94)), url('/asbestos-cement-roof-north-east-commercial-building.webp');
+  background-image: linear-gradient(rgba(7,29,43,.72), rgba(7,29,43,.78)), url('/asbestos-cement-roof-north-east-commercial-building.webp');
   background-position: center;
   background-size: cover;
   color: #dce6e9;
@@ -184,7 +184,7 @@ figure { margin: 0; }
 .detail-hero::after { content: ""; position: absolute; width: 480px; height: 480px; right: -180px; bottom: -300px; border: 80px solid rgba(245,181,27,.09); border-radius: 50%; }
 .area-detail-hero { min-height: 690px; display: flex; align-items: stretch; }
 .detail-hero-media { position: absolute; inset: 0; }
-.detail-hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,20,31,.91) 0%, rgba(4,20,31,.76) 53%, rgba(4,20,31,.30) 100%), linear-gradient(0deg, rgba(4,20,31,.52), transparent 58%); }
+.detail-hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,20,31,.75) 0%, rgba(4,20,31,.58) 53%, rgba(4,20,31,.22) 100%), linear-gradient(0deg, rgba(4,20,31,.52), transparent 58%); }
 .detail-hero-media img { width: 100%; height: 100%; object-fit: cover; }
 .detail-hero-media figcaption { position: absolute; z-index: 2; right: 28px; bottom: 24px; max-width: 520px; padding: 11px 14px; background: rgba(4,20,31,.78); color: #d7e2e5; font-size: 12px; line-height: 1.45; }
 .area-detail-hero > .shell { position: relative; z-index: 3; align-self: center; }
@@ -272,7 +272,7 @@ figure { margin: 0; }
 .hub-return { grid-column: 1 / -1; margin: 8px 0 0; text-align: center; }
 
 .hub-hero { position: relative; min-height: 620px; display: flex; align-items: center; overflow: hidden; background: var(--ink); color: var(--white); }
-.hub-hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(rgba(4,20,31,.76),rgba(4,20,31,.87)); }
+.hub-hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(rgba(4,20,31,.62),rgba(4,20,31,.72)); }
 .hub-hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hub-hero-copy { position: relative; z-index: 2; padding-block: 86px; text-align: center; }
 .hub-hero-copy .breadcrumbs { justify-content: center; margin-bottom: 55px; }
@@ -339,7 +339,7 @@ figure { margin: 0; }
   .brand b { font-size: 14px; }
   .brand small { font-size: 9px; }
   .header-call { padding: 10px; font-size: 13px; }
-  .hero-scrim { background: linear-gradient(90deg, rgba(3,20,31,.90), rgba(3,20,31,.68)); }
+  .hero-scrim { background: linear-gradient(90deg, rgba(3,20,31,.77), rgba(3,20,31,.53)); }
   .hero h1, .detail-hero h1 { font-size: clamp(2.38rem,11.9vw,3.655rem); }
   .hero-answer, .detail-answer { font-size: 17px; }
   .hero-grid { padding-block: 58px; }
@@ -356,7 +356,7 @@ figure { margin: 0; }
   .span-2 { grid-column: 1; }
   .detail-hero { padding-bottom: 65px; }
   .area-detail-hero { min-height: 650px; }
-  .detail-hero-media::after { background: linear-gradient(90deg, rgba(4,20,31,.90), rgba(4,20,31,.66)); }
+  .detail-hero-media::after { background: linear-gradient(90deg, rgba(4,20,31,.77), rgba(4,20,31,.53)); }
   .detail-hero-media figcaption { right: 14px; bottom: 12px; left: 14px; max-width: none; }
   .service-photo-section { padding-bottom: 70px; }
   .service-photo img { height: 320px; }
